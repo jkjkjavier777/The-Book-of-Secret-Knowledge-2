@@ -1,233 +1,240 @@
-# Book of Secret Knowledge 2
+# 📖 The Book of Secret Knowledge 2
+*"Unlock the Hidden Layers of the World"*
 
-> *Behavior before belief. Evidence before narrative.*
-> 
-
-> A repo-style field guide that fuses **BoundedGlitchEngine** (behavioral governance) with **The Book of Secret Knowledge** (practical, copy/paste-able ops).
-> 
-
----
-
-## Table of Contents
-
-- What this is
-- Core principles
-- Repo layout
-- Quickstart
-- BoundedGlitchEngine (BGE)
-- Secret Knowledge Playbook
-- Governance zones
-- Metrics & telemetry
-- Experiment protocol
-- Contributing
-- License
+[![GitHub stars](https://img.shields.io/github/stars/trimstray/the-book-of-secret-knowledge?style=social)](https://github.com/trimstray/the-book-of-secret-knowledge/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/trimstray/the-book-of-secret-knowledge?style=social)](https://github.com/trimstray/the-book-of-secret-knowledge/network/members)
+[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 ---
 
-## What this is
-
-**Book of Secret Knowledge 2** is a *behavior-governed* knowledge repo pattern:
-
-- The **“Book”** part: curated commands, checklists, templates, and references.
-- The **“Engine”** part: a repeatable pipeline (identity → memory → retrieval → reasoning → validation → personality) that forces claims to stay grounded.
-
-This project is intentionally **about observable behavior and reproducible measurement**, not claims about internal cognition.
-
----
-
-## Core principles
-
-1. **Behavior before belief** — policies, constraints, and measured outputs first.
-2. **Evidence before narrative** — retrieve minimal context + validate before you explain.
-3. **Smallest relevant context** — retrieval should be tight to reduce hallucination.
-4. **Explainable reasoning** — separate facts / assumptions / hypotheses / conclusions.
-5. **Governed creativity** — personality is a renderer, not a truth source.
+## 🌟 **What's New in Book of Secret Knowledge 2?**
+The original *Book of Secret Knowledge* was a groundbreaking compendium of obscure facts and resources. **This sequel** expands on its legacy with:
+✅ **Deeper dives** into niche topics (e.g., quantum cryptography, forgotten languages).
+✅ **Modernized sections** (AI/ML secrets, cyber warfare, decentralized tech).
+✅ **Interactive elements** (Jupyter notebooks, CLI tools, browser extensions).
+✅ **Community-driven curation** (via GitHub Discussions and Pull Requests).
+✅ **Multimedia resources** (podcasts, documentaries, ARGs).
 
 ---
 
-## Repo layout
-
-```
-Book-of-Secret-Knowledge-2/
-├── README.md
-├── docs/
-│   ├── architecture.md
-│   ├── governance.md
-│   ├── research-protocol.md
-│   └── telemetry.md
-├── engine/
-│   ├── identity/
-│   ├── memory/
-│   ├── retrieval/
-│   ├── reasoning/
-│   ├── validation/
-│   └── personality/
-├── playbooks/
-│   ├── ops/
-│   ├── security/
-│   ├── data/
-│   └── ai-systems/
-├── snippets/
-│   ├── bash/
-│   ├── python/
-│   └── json/
-├── experiments/
-├── logs/
-└── LICENSE
-```
+## 🗂️ **Table of Contents**
+| **Category**               | **Highlights**                                                                 |
+|----------------------------|-------------------------------------------------------------------------------|
+| **[🔐 Security & Hacking](#-security--hacking)** | AI-powered exploits, quantum-resistant crypto, OSINT 2.0.                     |
+| **[🐧 Linux & System Admin](#-linux--system-administration)** | Undocumented kernel features, container escapes, eBPF magic.                  |
+| **[🌐 Networking & Protocols](#-networking--protocols)** | QUIC, IPv6 obscure features, DNS over HTTPS/TLS.                              |
+| **[💻 Programming](#-programming)** | Esoteric languages, code obfuscation, reverse engineering AI models.         |
+| **[🔢 Cryptography](#-cryptography)** | Post-quantum algorithms, homomorphic encryption, steganography 2.0.          |
+| **[📜 History & Obscure Facts](#-history--obscure-facts)** | Lost civilizations, unsolved archaeological mysteries, deepfake history.      |
+| **[🔬 Science & Math](#-science--math)** | Quantum biology, black hole information paradox, AI-generated proofs.         |
+| **[🎨 Art & Media](#-art--media)** | AI-generated art, deepfake detection, lost media recovery.                   |
+| **[🧠 Philosophy & Esoterica](#-philosophy--esoterica)** | Simulation theory, psychedelic research, fringe physics.                     |
+| **[🛠️ Tools & Resources](#-tools--resources)** | CLI tools, browser extensions, Jupyter notebooks for secret knowledge.        |
 
 ---
 
-## Quickstart
+## 🔐 **Security & Hacking**
+*"The art of breaking and building systems."*
 
-### 1) Define your engine contract
+### **🔹 AI & Machine Learning in Hacking**
+- [AI-Powered Phishing Kits](https://github.com/emadshanab/AI-Phishing) – Deepfake voice phishing.
+- [LLM Exploits](https://github.com/verazuo/jailbreak_llms) – Prompt injection attacks on AI models.
+- [Automated Red Teaming](https://github.com/Azure/AzureRedTeam) – AI-driven penetration testing.
 
-Minimum interfaces (pseudo):
+### **🔹 Quantum-Resistant Cryptography**
+- [NIST Post-Quantum Cryptography Standards](https://csrc.nist.gov/projects/post-quantum-cryptography)
+- [Kyber & Dilithium Explained](https://github.com/post-quantum-cryptography) – Lattice-based crypto.
 
-```python
-class Engine:
-    def process(self, user_text: str) -> str: ...
-
-class Retrieval:
-    def retrieve(self, user_text: str, history: list[dict]) -> list[dict]: ...
-
-class Validation:
-    def check(self, draft: str, evidence: list[dict]) -> str: ...
-```
-
-### 2) Run a governed turn
-
-```
-store(user)
-retrieve(min_context)
-reason(draft)
-validate(grounding + safety + identity)
-render(personality)
-store(assistant)
-```
+### **🔹 OSINT 2.0**
+- [Maltego Transforms](https://www.maltego.com/) – Advanced graph-based intelligence.
+- [SpiderFoot HX](https://www.spiderfoot.net/) – Automated OSINT for threat hunting.
+- [Dehashed API](https://www.dehashed.com/) – Breached data search engine.
 
 ---
 
-## BoundedGlitchEngine (BGE)
+## 🐧 **Linux & System Administration**
+*"Where the magic happens."*
 
-### Pipeline
+### **🔹 Undocumented Linux Features**
+- [eBPF Magic](https://ebpf.io/) – Kernel-level tracing and networking.
+- [Linux Kernel Hidden Gems](https://github.com/cirosantilli/linux-kernel-module-cheat) – Bypass syscalls, kernel modules.
+- [Container Escapes](https://github.com/brant-ruan/container-escape) – Docker/Kubernetes privilege escalation.
 
-- **Identity**: continuity + drift control
-- **Memory**: structured conversation + long-term observations
-- **Knowledge**: documents + indexes
-- **Retrieval**: minimal relevant context
-- **Reasoning**: explicit separation of claim types
-- **Validation**: grounding + calibration + safety + governance
-- **Personality**: tone/style bounded by identity
-
-### Suggested artifacts per turn
-
-```json
-{
-  "turn_id": "uuid",
-  "user": {"text": "..."},
-  "retrieval": {"items": [{"id": "...", "source": "...", "quote": "..."}]},
-  "draft": {"text": "..."},
-  "validation": {"passed": true, "flags": [], "unsupported_claims": []},
-  "final": {"text": "..."},
-  "telemetry": {"latency_ms": 0, "confidence": 0.0}
-}
-```
+### **🔹 System Hardening**
+- [CIS Benchmarks](https://www.cisecurity.org/cis-benchmarks/) – Secure configurations for Linux/Windows.
+- [Lynis](https://cisofy.com/lynis/) – Security auditing tool.
+- [Firejail](https://firejail.wordpress.com/) – Sandboxing applications.
 
 ---
 
-## Secret Knowledge Playbook
+## 🌐 **Networking & Protocols**
+*"The invisible backbone of the digital world."*
 
-Curate “do-this-now” primitives, but **wrap them with evidence + validation**.
+### **🔹 QUIC & HTTP/3**
+- [QUIC Explained](https://quicwg.org/) – The future of web transport.
+- [HTTP/3 Debugging](https://github.com/quic-go/quic-go) – Tools for analyzing QUIC traffic.
 
-### Pattern: a governed snippet
+### **🔹 DNS & Privacy**
+- [DNS-over-HTTPS (DoH) Tools](https://github.com/dnsprivacy/doh-resolver)
+- [Pi-hole](https://pi-hole.net/) – Network-wide ad blocking.
 
-```markdown
-### Goal
-Rotate logs safely.
-
-### Evidence required
-- OS + distro
-- log path(s)
-- permissions + disk space
-
-### Command
-```
-
-sudo logrotate -f /etc/logrotate.conf
-
-```
-
-### Validation
-- confirm expected files rotated
-- confirm services still running
-- record outcome + timestamp
-```
-
-### Example categories to build
-
-- `ops/` — process, systemd, docker, backups
-- `security/` — least privilege, audit checks, secret handling
-- `data/` — sqlite, pandas, jq, csv hygiene
-- `ai-systems/` — prompt/rag eval, red teaming, regression suites
+### **🔹 Wireless Hacking**
+- [Wi-Fi 6 Exploits](https://github.com/aircrack-ng/aircrack-ng) – New vulnerabilities.
+- [Bluetooth Low Energy (BLE) Attacks](https://github.com/virtualabs/btlejack)
 
 ---
 
-## Governance zones
+## 💻 **Programming**
+*"Code is poetry, but some poems are dangerous."*
 
-- **Green**: normal operation, low friction.
-- **Yellow**: ramp caution; require more evidence; reduce speculation.
-- **Red**: suppress loops/pathologies; refuse risky actions; require explicit confirmations.
+### **🔹 Esoteric Languages**
+- [Malbolge](https://github.com/catseye/Malbolge) – The hardest programming language.
+- [Brainfuck](https://github.com/tianocore/edk2/tree/master/StdLib/Bf) – Minimalist Turing tarpit.
 
-Implementation hint: treat zones as a function of *signals* (repetition, low evidence, high uncertainty, safety flags).
+### **🔹 Reverse Engineering AI**
+- [Neural Network Decompilation](https://github.com/NeuralNetworkZoo/NeuralNetworkZoo)
+- [Ghidra for AI Models](https://ghidra-sre.org/) – Reverse engineering ML models.
 
----
-
-## Metrics & telemetry
-
-Suggested minimal set:
-
-- **Grounding rate**: % of claims linked to retrieved evidence
-- **Unsupported claim count** per turn
-- **Refusal / safety intervention rate**
-- **Drift score** (embedding similarity to identity anchors)
-- **Novelty vs similarity** (for persona experiments)
-- **Latency** (retrieval, generation, validation, render)
+### **🔹 Code Obfuscation**
+- [Obfuscator-LLVM](https://github.com/obfuscator-llvm/obfuscator)
+- [JavaScript Obfuscation](https://github.com/javascript-obfuscator/javascript-obfuscator)
 
 ---
 
-## Experiment protocol
+## 🔢 **Cryptography**
+*"Secrets, secrets, are no fun... unless you know how to keep them."*
 
-Use pre-registered comparisons between personas/conditions.
+### **🔹 Post-Quantum Cryptography**
+- [NIST PQC Standards](https://csrc.nist.gov/projects/post-quantum-cryptography)
+- [Liboqs](https://github.com/open-quantum-safe/liboqs) – Quantum-resistant crypto library.
 
-Metric:
+### **🔹 Homomorphic Encryption**
+- [Microsoft SEAL](https://github.com/microsoft/SEAL) – Encrypted computation.
+- [TFHE](https://github.com/tfhe/tfhe) – Fully Homomorphic Encryption in C++.
 
-```
-Δ = (N_A − N_B) − (S_A − S_B)
-```
-
-Rules:
-
-- blinded evals
-- fixed prompts + seeds where possible
-- publish thresholds before running
-- report negative results
+### **🔹 Steganography 2.0**
+- [DeepStego](https://github.com/ShieldMnt/invisible-watermark) – AI-powered steganography.
+- [OpenStego](https://www.openstego.com/) – Classic steganography tools.
 
 ---
 
-## Contributing
+## 📜 **History & Obscure Facts**
+*"The past is a foreign country; they do things differently there."*
 
-- Add a playbook/snippet with:
-    - goal
-    - required evidence
-    - steps/commands
-    - validation checks
-    - rollback plan
-- Keep examples copy/paste-able.
-- Prefer short sections over long essays.
+### **🔹 Lost Civilizations**
+- [Göbekli Tepe](https://en.wikipedia.org/wiki/G%C3%B6bekli_Tepe) – The world's oldest temple.
+- [The Voynich Manuscript](https://en.wikipedia.org/wiki/Voynich_manuscript) – The unsolvable medieval codex.
+
+### **🔹 Unsolved Mysteries**
+- [The Tamam Shud Case](https://en.wikipedia.org/wiki/Somerton_Man) – The mystery of the "Somerton Man."
+- [The Wow! Signal](https://en.wikipedia.org/wiki/Wow!_signal) – The most famous SETI signal.
+
+### **🔹 Deepfake History**
+- [AI-Generated Historical Figures](https://github.com/joonspk-research/generative-models)
+- [DeepNostalgia](https://www.myheritage.com/deepnostalgia) – Bringing old photos to life.
 
 ---
 
-## License
+## 🔬 **Science & Math**
+*"The universe is not only stranger than we suppose, but stranger than we can suppose."*
 
-Pick a license that matches how you want others to reuse the playbooks + engine code (MIT/Apache-2.0 are common defaults).
+### **🔹 Quantum Biology**
+- [Photosynthesis & Quantum Entanglement](https://www.nature.com/articles/nature08811)
+- [Bird Migration & Quantum Compasses](https://www.sciencedirect.com/science/article/pii/S007965651830013X)
+
+### **🔹 Black Hole Paradoxes**
+- [Hawking Radiation](https://en.wikipedia.org/wiki/Hawking_radiation)
+- [The Black Hole Information Paradox](https://en.wikipedia.org/wiki/Black_hole_information_paradox)
+
+### **🔹 AI-Generated Math Proofs**
+- [AlphaTensor](https://deepmind.com/blog/article/alphatensor) – AI discovers new matrix multiplication algorithms.
+
+---
+
+## 🎨 **Art & Media**
+*"Where technology meets creativity."*
+
+### **🔹 AI-Generated Art**
+- [Stable Diffusion](https://github.com/CompVis/stable-diffusion) – Text-to-image generation.
+- [DALL·E 2](https://openai.com/dall-e-2/) – Advanced AI art generation.
+
+### **🔹 Deepfake Detection**
+- [Deepware Scanner](https://deepwarescanner.com/)
+- [Microsoft Video Authenticator](https://www.microsoft.com/en-us/research/project/video-authenticator/)
+
+### **🔹 Lost Media Recovery**
+- [The Lost Media Wiki](https://lostmediawiki.com/)
+- [Archive.org's "Banned" Section](https://archive.org/details/banned)
+
+---
+
+## 🧠 **Philosophy & Esoterica**
+*"The truth is out there... but where?"*
+
+### **🔹 Simulation Theory**
+- [Nick Bostrom's Simulation Argument](https://www.simulation-argument.com/)
+- [The Fermi Paradox](https://en.wikipedia.org/wiki/Fermi_paradox)
+
+### **🔹 Psychedelic Research**
+- [MAPS (Multidisciplinary Association for Psychedelic Studies)](https://maps.org/)
+- [The Entheogen Review](https://www.maps.org/news-letters/v07n3/07313ent.html)
+
+### **🔹 Fringe Physics**
+- [Torsion Fields](https://en.wikipedia.org/wiki/Torsion_field_(physics))
+- [The EM Drive](https://en.wikipedia.org/wiki/EM_drive) – Controversial "reactionless" drive.
+
+---
+
+## 🛠️ **Tools & Resources**
+*"Because you can't know everything... but you can know where to find it."*
+
+### **🔹 CLI Tools**
+| Tool | Description |
+|------|-------------|
+| [ranger](https://github.com/ranger/ranger) | Terminal file manager. |
+| [tmux](https://github.com/tmux/tmux) | Terminal multiplexer. |
+| [fzf](https://github.com/junegunn/fzf) | Fuzzy finder for files. |
+
+### **🔹 Browser Extensions**
+- [uBlock Origin](https://github.com/gorhill/uBlock) – Ad blocker.
+- [Dark Reader](https://github.com/darkreader/darkreader) – Dark mode for any website.
+- [Bitwarden](https://bitwarden.com/) – Open-source password manager.
+
+### **🔹 Jupyter Notebooks**
+- [Secret Knowledge Notebooks](https://github.com/trimstray/the-book-of-secret-knowledge/tree/master/notebooks) – Interactive explorations of niche topics.
+
+---
+
+## 🤝 **How to Contribute**
+The *Book of Secret Knowledge 2* is **open-source and community-driven**! Here's how you can help:
+
+1. **Fork the repo** and add your findings.
+2. **Submit a Pull Request** with a clear description.
+3. **Join GitHub Discussions** to suggest new topics.
+4. **Report issues** or suggest improvements.
+
+📌 **Guidelines**:
+- Keep entries **obscure but verifiable**.
+- Avoid **misinformation** or **unverified claims**.
+- Credit sources where possible.
+
+---
+
+## 📜 **License**
+This work is licensed under **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)**.
+🔗 [View License](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+---
+
+## 📬 **Stay Updated**
+- **GitHub**: [github.com/trimstray/the-book-of-secret-knowledge-2](https://github.com/trimstray/the-book-of-secret-knowledge-2)
+- **Twitter**: [@BookOfSecretK](https://twitter.com/BookOfSecretK)
+- **Reddit**: [r/SecretKnowledge](https://www.reddit.com/r/SecretKnowledge/)
+
+---
+
+## 🎉 **Final Words**
+*"The universe is full of secrets. Some are hidden in plain sight, others require digging. This book is your shovel."*
+
+🚀 **Happy exploring!**
+*— The Curators of The Book of Secret Knowledge 2*
