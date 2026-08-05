@@ -1,0 +1,20 @@
+{
+  "name": "the-book-of-secret-knowledge-2",
+  "version": "0.3.0",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "terminal": "node chat.js"
+  },
+  "dependencies": {
+    "@mistralai/mistralai": "^1.0.0",
+    "dotenv": "^16.4.0",
+    "express": "^4.19.2"
+  },
+  "author": "jkjkjavier777",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jkjkjavier777/The-Book-of-Secret-Knowledge-2.git"
+  }
+}
