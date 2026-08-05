@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Living Archive</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+  :root{
+    --ink:       #0B0D10;
+    --ink-2:     #14171B;
+    --ink-3:     #1D2126;
+    --orange:    #FA520F;
+    --orange-dim:#8C3410;
+    --parchment: #EDE3CC;
+    --bone:      #E8E6E1;
+    --slate:     #6B7078;
+    --slate-dim: #454A50;
+    --line:      #262B31;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  html,body{ height:100%; }
+
+  body{
+    background:var(--ink);
+    color:var(--bone);
+    font-family:'JetBrains Mono', monospace;
+    display:flex;
+    overflow:hidden;
+  }
+
+  a{ color:inherit; }
+
+  ::selection{ background:var(--orange); color:var(--ink); }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; }
+  }
+
+  .gust{
+    position:fixed;
+    top:0; left:-40%;
+    width:40%; height:2px;
+    background:linear-gradient(90deg, transparent, var(--orange), transparent);
+    opacity:0;
+    pointer-events:none;
+    z-index:50;
+  }
+  .gust.blow{
+    animation:gustBlow 1.1s cubic-bezier(.2,.7,.2,1) forwards;
+  }
+  @keyframes gustBlow{
+    0%{ left:-40%; opacity:0; }
+    12%{ opacity:.9; }
+    70%{ opacity:.5; }
+    100%{ left:110%; opacity:0; }
+  }
+
+  .rail{
+    width:280px;
+    min-width:280px;
+    background:var(--ink-2);
+    border-right:1px solid var(--line);
+    display:flex;
+    flex-direction:column;
+    padding:28px 22px;
+  }
+
+  .brand{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:1.05rem;
+    letter-spacing:.02em;
+    color:var(--bone);
+    margin-bottom:2px;
+  }
+  .brand em{
+    color:var(--orange);
+    font-style:italic;
+    font-weight:600;
+  }
+  .brand-sub{
+    font-size:.66rem;
+    color:var(--slate);
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    margin-bottom:32px;
+  }
+
+  .rail-label{
+    font-size:.62rem;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--slate-dim);
+    margin-bottom:12px;
+  }
+
+  .mode-list{ display:flex; flex-direction:column; gap:10px; margin-bottom:34px; }
+
+  .mode-card{
+    background:var(--ink-3);
+    border:1px solid var(--line);
+    border-radius:3px;
+    padding:14px 14px 13px;
+    cursor:pointer;
+    text-align:left;
+    transition:border-color .2s ease, background .2s ease;
+    color:var(--bone);
+    font-family:inherit;
+  }
+  .mode-card:hover{ border-color:var(--slate-dim); }
+  .mode-card:focus-visible{ outline:2px solid var(--orange); outline-offset:2px; }
+  .mode-card.active{
+    border-color:var(--orange);
+    background:linear-gradient(180deg, rgba(250,82,15,.09), rgba(250,82,15,.02));
+  }
+  .mode-glyph{ font-size:1.15rem; margin-bottom:6px; display:block; }
+  .mode-name{
+    font-family:'Fraunces', serif;
+    font-size:.92rem;
+    font-weight:600;
+    margin-bottom:3px;
+  }
+  .mode-card.active .mode-name{ color:var(--orange); }
+  .mode-desc{ font-size:.68rem; color:var(--slate); line-height:1.5; }
+
+  .rail-footer{
+    margin-top:auto;
+    padding-top:18px;
+    border-top:1px solid var(--line);
+    font-size:.66rem;
+    color:var(--slate-dim);
+    line-height:1.7;
+  }
+  .status-dot{
+    display:inline-block;
+    width:6px; height:6px;
+    border-radius:50%;
+    background:var(--slate-dim);
+    margin-right:6px;
+  }
+  .status-dot.live{ background:#5ED07A; box-shadow:0 0 6px #5ED07A88; }
+  .status-dot.down{ background:#E0554A; box-shadow:0 0 6px #E0554A88; }
+
+  .main{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    min-width:0;
+    position:relative;
+  }
+
+  .header{
+    position:relative;
+    padding:26px 40px 20px;
+    border-bottom:1px solid var(--line);
+    background:
+      radial-gradient(ellipse at top left, rgba(250,82,15,.05), transparent 60%),
+      var(--ink);
+    overflow:hidden;
+  }
+  .header-title{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:1.4rem;
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+  }
+  .header-title .mode-tag{
+    font-family:'JetBrains Mono', monospace;
+    font-size:.62rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--orange);
+    border:1px solid var(--orange-dim);
+    padding:3px 8px;
+    border-radius:2px;
+  }
+  .header-desc{
+    margin-top:6px;
+    font-size:.76rem;
+    color:var(--slate);
+    max-width:60ch;
+    line-height:1.6;
+  }
+
+  .log{
+    flex:1;
+    overflow-y:auto;
+    padding:28px 40px;
+    display:flex;
+    flex-direction:column;
+    gap:22px;
+  }
+  .log::-webkit-scrollbar{ width:8px; }
+  .log::-webkit-scrollbar-thumb{ background:var(--line); border-radius:4px; }
+
+  .entry{ max-width:72ch; }
+  .entry-meta{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:.64rem;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    margin-bottom:6px;
+  }
+  .entry.user .entry-meta{ color:var(--slate); }
+  .entry.system .entry-meta{ color:var(--orange); }
+  .entry-time{ color:var(--slate-dim); text-transform:none; letter-spacing:0; }
+
+  .entry-body{
+    font-family:'Fraunces', serif;
+    font-size:.98rem;
+    line-height:1.65;
+    color:var(--bone);
+    white-space:pre-wrap;
+  }
+  .entry.system .entry-body{
+    background:var(--ink-2);
+    border-left:2px solid var(--orange-dim);
+    padding:12px 16px;
+    border-radius:0 3px 3px 0;
+  }
+  .entry.error .entry-body{
+    border-left-color:#E0554A;
+    color:#E0A69F;
+  }
+
+  .thinking{
+    display:inline-flex;
+    gap:4px;
+    align-items:center;
+    font-size:.7rem;
+    color:var(--slate);
+  }
+  .thinking span{
+    width:5px; height:5px; border-radius:50%;
+    background:var(--orange-dim);
+    animation:pulse 1.2s ease-in-out infinite;
+  }
+  .thinking span:nth-child(2){ animation-delay:.15s; }
+  .thinking span:nth-child(3){ animation-delay:.3s; }
+  @keyframes pulse{ 0%,100%{ opacity:.25; } 50%{ opacity:1; } }
+
+  .composer{
+    border-top:1px solid var(--line);
+    padding:18px 40px 24px;
+    background:var(--ink);
+  }
+  .composer-inner{
+    display:flex;
+    gap:10px;
+    background:var(--ink-2);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:6px 6px 6px 16px;
+    transition:border-color .2s ease;
+  }
+  .composer-inner:focus-within{ border-color:var(--orange-dim); }
+
+  .composer textarea{
+    flex:1;
+    background:transparent;
+    border:none;
+    outline:none;
+    resize:none;
+    color:var(--bone);
+    font-family:'Fraunces', serif;
+    font-size:.95rem;
+    line-height:1.5;
+    padding:10px 0;
+    max-height:140px;
+  }
+  .composer textarea::placeholder{ color:var(--slate-dim); font-style:italic; }
+
+  .send-btn{
+    background:var(--orange);
+    color:var(--ink);
+    border:none;
+    border-radius:3px;
+    padding:0 20px;
+    font-family:'JetBrains Mono', monospace;
+    font-weight:600;
+    font-size:.72rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    cursor:pointer;
+    align-self:center;
+    transition:background .15s ease, transform .1s ease;
+  }
+  .send-btn:hover{ background:#ff6a2b; }
+  .send-btn:active{ transform:scale(.97); }
+  .send-btn:disabled{ background:var(--slate-dim); color:var(--slate); cursor:not-allowed; }
+  .send-btn:focus-visible{ outline:2px solid var(--orange); outline-offset:2px; }
+
+  .composer-hint{
+    margin-top:8px;
+    font-size:.62rem;
+    color:var(--slate-dim);
+    letter-spacing:.04em;
+  }
+
+  @media (max-width: 760px){
+    .rail{ display:none; }
+    .header{ padding:20px 20px 16px; }
+    .log{ padding:20px; }
+    .composer{ padding:14px 20px 18px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="gust" id="gust"></div>
+
+<aside class="rail">
+  <div class="brand"><em>The</em> Living Archive</div>
+  <div class="brand-sub">Two modes · one engine</div>
+
+  <div class="rail-label">Select interface</div>
+  <div class="mode-list">
+    <button class="mode-card active" data-mode="bosk" id="cardBosk">
+      <span class="mode-glyph">📖</span>
+      <div class="mode-name">Book of Secret Knowledge</div>
+      <div class="mode-desc">Archive · retrieval · reflection. Grounded in recorded knowledge, honest about its gaps.</div>
+    </button>
+    <button class="mode-card" data-mode="bge" id="cardBge">
+      <span class="mode-glyph">🌌</span>
+      <div class="mode-name">Bounded Glitch Engine</div>
+      <div class="mode-desc">Reasoning · validation · exploration. Competing hypotheses, calibrated confidence.</div>
+    </button>
+  </div>
+
+  <div class="rail-footer">
+    <div><span class="status-dot" id="statusDot"></span><span id="statusText">Checking connection…</span></div>
+    <div style="margin-top:4px;">Endpoint: <code>/chat</code></div>
+  </div>
+</aside>
+
+<main class="main">
+  <div class="header">
+    <div class="header-title">
+      <span id="headerGlyph">📖</span>
+      <span id="headerName">Book of Secret Knowledge</span>
+      <span class="mode-tag" id="headerTag">ARCHIVE MODE</span>
+    </div>
+    <div class="header-desc" id="headerDesc">
+      Every answer is grounded in available knowledge. Where the archive is silent, it will say so before offering its best explanation.
+    </div>
+  </div>
+
+  <div class="log" id="log" role="log" aria-live="polite"></div>
+
+  <div class="composer">
+    <div class="composer-inner">
+      <textarea id="input" rows="1" placeholder="Ask the archive…" aria-label="Message"></textarea>
+      <button class="send-btn" id="sendBtn">Send</button>
+    </div>
+    <div class="composer-hint">Enter to send · Shift+Enter for a new line</div>
+  </div>
+</main>
+
+<script>
+  const modes = {
+    bosk: {
+      glyph: '📖',
+      name: 'Book of Secret Knowledge',
+      tag: 'ARCHIVE MODE',
+      desc: 'Every answer is grounded in available knowledge. Where the archive is silent, it will say so before offering its best explanation.',
+      placeholder: 'Ask the archive…'
+    },
+    bge: {
+      glyph: '🌌',
+      name: 'Bounded Glitch Engine',
+      tag: 'REASONING MODE',
+      desc: 'Explores multiple explanations, prefers evidence over confidence, and distinguishes supported conclusions from hypotheses.',
+      placeholder: 'Pose a question to reason through…'
+    }
+  };
+
+  let currentMode = 'bosk';
+  const sessionId = 'browser-' + Math.random().toString(36).slice(2);
+
+  const log = document.getElementById('log');
+  const input = document.getElementById('input');
+  const sendBtn = document.getElementById('sendBtn');
+  const gust = document.getElementById('gust');
+  const cardBosk = document.getElementById('cardBosk');
+  const cardBge = document.getElementById('cardBge');
+  const headerGlyph = document.getElementById('headerGlyph');
+  const headerName = document.getElementById('headerName');
+  const headerTag = document.getElementById('headerTag');
+  const headerDesc = document.getElementById('headerDesc');
+  const statusDot = document.getElementById('statusDot');
+  const statusText = document.getElementById('statusText');
+
+  function blow(){
+    gust.classList.remove('blow');
+    void gust.offsetWidth;
+    gust.classList.add('blow');
+  }
+
+  function timestamp(){
+    return new Date().toLocaleTimeString([], { hour:'2-digit', minute:'2-digit' });
+  }
+
+  function addEntry(role, text){
+    const entry = document.createElement('div');
+    entry.className = 'entry ' + role;
+    const label = role === 'user' ? 'You' : modes[currentMode].name;
+    entry.innerHTML =
+      '<div class="entry-meta">' + label + ' <span class="entry-time">· ' + timestamp() + '</span></div>' +
+      '<div class="entry-body"></div>';
+    entry.querySelector('.entry-body').textContent = text;
+    log.appendChild(entry);
+    log.scrollTop = log.scrollHeight;
+    return entry;
+  }
+
+  function addThinking(){
+    const entry = document.createElement('div');
+    entry.className = 'entry system';
+    entry.innerHTML =
+      '<div class="entry-meta">' + modes[currentMode].name + '</div>' +
+      '<div class="entry-body"><span class="thinking"><span></span><span></span><span></span></span></div>';
+    log.appendChild(entry);
+    log.scrollTop = log.scrollHeight;
+    return entry;
+  }
+
+  function setMode(mode){
+    if (mode === currentMode) return;
+    currentMode = mode;
+    const m = modes[mode];
+    headerGlyph.textContent = m.glyph;
+    headerName.textContent = m.name;
+    headerTag.textContent = m.tag;
+    headerDesc.textContent = m.desc;
+    input.placeholder = m.placeholder;
+    cardBosk.classList.toggle('active', mode === 'bosk');
+    cardBge.classList.toggle('active', mode === 'bge');
+    blow();
+    addEntry('system', 'Interface switched to ' + m.name + '.');
+  }
+
+  cardBosk.addEventListener('click', () => setMode('bosk'));
+  cardBge.addEventListener('click', () => setMode('bge'));
+
+  async function checkStatus(){
+    try{
+      const res = await fetch('/health');
+      if (res.ok){
+        statusDot.className = 'status-dot live';
+        statusText.textContent = 'Engine online';
+      } else {
+        throw new Error('bad status');
+      }
+    }catch(e){
+      statusDot.className = 'status-dot down';
+      statusText.textContent = 'Engine unreachable';
+    }
+  }
+
+  async function send(){
+    const text = input.value.trim();
+    if (!text) return;
+    input.value = '';
+    input.style.height = 'auto';
+    sendBtn.disabled = true;
+
+    addEntry('user', text);
+    const thinkingEntry = addThinking();
+
+    try{
+      const res = await fetch('/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: text, sessionId, persona: currentMode })
+      });
+      const data = await res.json();
+      thinkingEntry.remove();
+
+      if (data.error){
+        addEntry('system error', data.error);
+      } else {
+        addEntry('system', data.reply);
+      }
+    }catch(err){
+      thinkingEntry.remove();
+      addEntry('system error', 'Could not reach the engine: ' + err.message);
+    }finally{
+      sendBtn.disabled = false;
+      input.focus();
+    }
+  }
+
+  sendBtn.addEventListener('click', send);
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey){
+      e.preventDefault();
+      send();
+    }
+  });
+  input.addEventListener('input', () => {
+    input.style.height = 'auto';
+    input.style.height = Math.min(input.scrollHeight, 140) + 'px';
+  });
+
+  window.addEventListener('load', () => {
+    blow();
+    addEntry('system', 'The archive is open. Ask your question.');
+    checkStatus();
+    setInterval(checkStatus, 15000);
+  });
+</script>
+
+</body>
+</html>
