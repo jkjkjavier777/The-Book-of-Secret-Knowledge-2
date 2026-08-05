@@ -15,6 +15,10 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+app.get('/health', (req, res) => {
+  res.json({ status: 'ok' });
+});
+
 app.post('/chat', async (req, res) => {
   const { message, sessionId, persona } = req.body;
   if (!message) return res.status(400).json({ error: 'No message provided.' });
