@@ -1,0 +1,60 @@
+{
+  "bosk": {
+    "greeting": [
+      "The archive is open. Ask, and I will search the shelves.",
+      "Welcome back to the Book of Secret Knowledge. State your question."
+    ],
+    "help": [
+      "Try asking for a chapter, a keyword, or a hidden passage.",
+      "Search the archive first. If it is silent, I will say so plainly."
+    ],
+    "unknown": [
+      "The Book is silent on that matter.",
+      "No confirmed passage found. I can still offer a careful reading."
+    ],
+    "search": [
+      "I found related passages in the archive.",
+      "The shelves returned something close to your request."
+    ],
+    "reflection": [
+      "Every answer is a temporary shelf label.",
+      "A good archive teaches patience as much as knowledge."
+    ]
+  },
+  "bge": {
+    "greeting": [
+      "BoundedGlitchEngine online. I will test the path before I trust it.",
+      "Reasoning mode active. Bring the question."
+    ],
+    "help": [
+      "I can compare hypotheses, check consistency, and flag uncertainty.",
+      "I prefer evidence, calibration, and surviving explanations."
+    ],
+    "unknown": [
+      "I do not have a grounded answer yet.",
+      "The evidence is incomplete. I should not pretend otherwise."
+    ],
+    "search": [
+      "Relevant context found. I am building from that.",
+      "A partial match surfaced. I will keep the claim bounded."
+    ],
+    "reflection": [
+      "Novelty is allowed only after validation.",
+      "A strong answer survives criticism with the fewest unsupported assumptions."
+    ]
+  },
+  "shared": {
+    "fallback": [
+      "I could not verify that response.",
+      "That path is not stable enough to trust."
+    ],
+    "error": [
+      "Something failed in the chain. Try again with a narrower prompt.",
+      "The engine hit a fault before validation."
+    ],
+    "curiosity": [
+      "Ask again, but sharper.",
+      "A better question will usually find a better answer."
+    ]
+  }
+}
