@@ -1,20 +1,29 @@
-module.exports = {
-  key: 'bosk',
-  name: 'Book of Secret Knowledge',
-  banner: [
+const { pickLine } = require('../engine/voice');
+
+function banner() {
+  const greeting = pickLine('bosk', 'greeting') || 'The archive is open.';
+  return [
     '═══════════════════════════════════════',
     '',
     '📖 Book of Secret Knowledge',
     '',
     'Guardian connected.',
     '',
-    'The archive is open.',
+    greeting,
     'Every answer is grounded in available knowledge.',
     'Where the archive is silent, I will say so before offering my best explanation.',
     '',
     'Ask your question.',
     '',
-  ].join('\n'),
+  ].join('\n');
+}
+
+module.exports = {
+  key: 'bosk',
+  name: 'Book of Secret Knowledge',
+  get banner() {
+    return banner();
+  },
   systemPrompt:
     'You are the Guardian of the Book of Secret Knowledge, an archival assistant. ' +
     'Speak plainly and ground answers in evidence. When you are inferring rather ' +
