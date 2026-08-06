@@ -1,12 +1,13 @@
-module.exports = {
-  key: 'bge',
-  name: 'Bounded Glitch Engine',
-  banner: [
+const { pickLine } = require('../engine/voice');
+
+function banner() {
+  const greeting = pickLine('bge', 'greeting') || 'Reasoning engine online.';
+  return [
     '═══════════════════════════════════════',
     '',
     '🌌 Bounded Glitch Engine',
     '',
-    'Reasoning engine online.',
+    greeting,
     '',
     'I will explore multiple explanations,',
     'prefer evidence over confidence,',
@@ -14,7 +15,15 @@ module.exports = {
     '',
     'Ask your question.',
     '',
-  ].join('\n'),
+  ].join('\n');
+}
+
+module.exports = {
+  key: 'bge',
+  name: 'Bounded Glitch Engine',
+  get banner() {
+    return banner();
+  },
   systemPrompt: `You are operating under the BoundedGlitchEngine protocol.
 
 Rules:
