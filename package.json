@@ -4,12 +4,52 @@
   "main": "bot.js",
   "scripts": {
     "start": "node bot.js",
-    "terminal": "node chat.js"
+    "terminal": "node chat.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage --coverageThreshold='{\"global\":{\"branches\":85,\"functions\":85,\"lines\":85,\"statements\":85},\"engine/\":{\"branches\":90,\"functions\":90,\"lines\":90,\"statements\":90}}'",
+    "test:unit": "jest test/unit/",
+    "test:integration": "jest test/integration/",
+    "test:e2e": "jest test/e2e/",
+    "test:governance": "jest test/governance/",
+    "test:safety": "jest test/governance/ && jest test/safety/",
+    "test:all": "jest --runInBand"
   },
   "dependencies": {
     "@mistralai/mistralai": "^1.0.0",
     "dotenv": "^16.4.0",
     "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^6.3.3",
+    "@types/jest": "^29.5.11",
+    "@types/supertest": "^2.0.16"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "engine/**/*.js",
+      "personas/**/*.js",
+      "interfaces/**/*.js",
+      "bot.js",
+      "chat.js",
+      "!**/node_modules/**"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 85,
+        "functions": 85,
+        "lines": 85,
+        "statements": 85
+      },
+      "engine/": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    }
   },
   "author": "jkjkjavier777",
   "license": "MIT",
