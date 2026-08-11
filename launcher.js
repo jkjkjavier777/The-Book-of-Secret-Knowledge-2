@@ -1,38 +1,43 @@
 #!/usr/bin/env node
 require('dotenv').config();
-const inquirer = require('inquirer');
+const readline = require('readline');
+const path = require('path');
 
-async function main() {
-  console.clear();
-  console.log('=== Main Menu ===\n');
+const options = {
+  '1': { label: 'The-Book-of-Secret-Knowledge', file: './interfaces/archive.js' },
+  '2': { label: 'The BoundedGlitchEngine', file: './interfaces/browser.js' },
+  '3': { label: 'Coding Assistant', file: './interfaces/coding.js' },
+};
 
-  const { choice } = await inquirer.prompt([
-    {
-      type: 'list',
-      name: 'choice',
-      message: 'Select an option:',
-      choices: [
-        { name: '1) The Book of Secret Knowledge', value: 'archive' },
-        { name: '2) The Bounded Glitch Engine', value: 'browser' },
-        { name: '3) Coding Assistant', value: 'coding' }
-      ]
-    }
-  ]);
-
-  switch (choice) {
-    case 'archive':
-      require('./interfaces/archive.js');
-      break;
-    case 'browser':
-      require('./interfaces/browser.js');
-      break;
-    case 'coding':
-      require('./interfaces/coding.js');
-      break;
-  }
+function printMenu() {
+  console.log('\n=== Launcher ===');
+  Object.entries(options).forEach(([key, opt]) => {
+    console.log(`${key}) ${opt.label}`);
+  });
+  console.log('================');
 }
 
-main().catch((err) => {
-  console.error('Launcher failed to start:', err);
-  process.exit(1);
-});
+function prompt() {
+  const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+  });
+
+  rl.question('Choose an option (1-3): ', (answer) => {
+    const choice = options[answer.trim()];
+    rl.close();
+
+    if (!choice) {
+      console.log('Invalid choice, try again.');
+      printMenu();
+      return prompt();
+    }
+
+    console.log(`Loading ${choice.label}...`);
+    const modulePath = path.resolve(__dirname, choice.file);
+    require(modulePath);
+  });
+}
+
+printMenu();
+prompt();
