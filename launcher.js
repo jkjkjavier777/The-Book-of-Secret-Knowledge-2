@@ -1,43 +1,45 @@
 #!/usr/bin/env node
-require('dotenv').config();
 const readline = require('readline');
 const path = require('path');
 
-const options = {
-  '1': { label: 'The-Book-of-Secret-Knowledge', file: './interfaces/archive.js' },
-  '2': { label: 'The BoundedGlitchEngine', file: './interfaces/browser.js' },
-  '3': { label: 'Coding Assistant', file: './interfaces/coding.js' },
-};
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
 
-function printMenu() {
-  console.log('\n=== Launcher ===');
-  Object.entries(options).forEach(([key, opt]) => {
-    console.log(`${key}) ${opt.label}`);
-  });
-  console.log('================');
-}
+function showMenu() {
+  console.clear();
+  console.log('========================================');
+  console.log('   The-Book-of-Secret-Knowledge-2');
+  console.log('========================================');
+  console.log('1) The-Book-of-Secret-Knowledge');
+  console.log('2) The BoundedGlitchEngine');
+  console.log('3) Coding Assistant');
+  console.log('========================================');
 
-function prompt() {
-  const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-  });
-
-  rl.question('Choose an option (1-3): ', (answer) => {
-    const choice = options[answer.trim()];
-    rl.close();
-
-    if (!choice) {
-      console.log('Invalid choice, try again.');
-      printMenu();
-      return prompt();
-    }
-
-    console.log(`Loading ${choice.label}...`);
-    const modulePath = path.resolve(__dirname, choice.file);
-    require(modulePath);
+  rl.question('Select an option (1-3): ', (answer) => {
+    handleChoice(answer.trim());
   });
 }
 
-printMenu();
-prompt();
+function handleChoice(choice) {
+  switch (choice) {
+    case '1':
+      rl.close();
+      require(path.join(__dirname, 'interfaces', 'archive.js'));
+      break;
+    case '2':
+      rl.close();
+      require(path.join(__dirname, 'interfaces', 'browser.js'));
+      break;
+    case '3':
+      rl.close();
+      require(path.join(__dirname, 'interfaces', 'coding.js'));
+      break;
+    default:
+      console.log('\nInvalid option. Please enter 1, 2, or 3.\n');
+      showMenu();
+  }
+}
+
+showMenu();
