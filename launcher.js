@@ -50,6 +50,8 @@ function startServer({ name, htmlFile }) {
   const app = express();
   const PORT = process.env.PORT || 3000;
 
+  // index: false prevents Express from auto-serving index.html
+  // for '/' before our explicit route below gets a chance to run
   app.use(express.static(path.join(__dirname, 'public'), { index: false }));
 
   app.get('/', (req, res) => {
@@ -60,4 +62,5 @@ function startServer({ name, htmlFile }) {
     console.log(`\n${name} running at http://localhost:${PORT}\n`);
   });
 }
+
 showMenu();
