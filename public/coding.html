@@ -9,9 +9,9 @@
   #log { border: 1px solid #333; padding: 12px; height: 65vh; overflow-y: auto; white-space: pre-wrap; background: #111; }
   .you { color: #9fd6ff; }
   .bot { color: #d6d6d6; }
+  .err { color: #ff8f8f; }
   form { display: flex; gap: 8px; margin-top: 12px; }
-  input, select { flex: 1; background: #111; color: #eee; border: 1px solid #333; padding: 8px; font-family: monospace; }
-  select { flex: 0 0 auto; }
+  input { flex: 1; background: #111; color: #eee; border: 1px solid #333; padding: 8px; font-family: monospace; }
   button { background: #222; color: #eee; border: 1px solid #444; padding: 8px 16px; cursor: pointer; }
 </style>
 </head>
@@ -19,22 +19,20 @@
   <h1>Coding Assistant</h1>
   <div id="log"></div>
   <form id="chat-form">
-    <select id="persona">
-      <option value="bge" selected>BoundedGlitchEngine</option>
-      <option value="bosk">Guardian (bosk)</option>
-    </select>
     <input id="input" autocomplete="off" placeholder="Ask a coding question..." />
     <button type="submit">Send</button>
   </form>
 <script>
+  const PERSONA = 'coding';
+  const sessionId = 'coding-' + Math.random().toString(36).slice(2);
+
   const log = document.getElementById('log');
   const form = document.getElementById('chat-form');
   const input = document.getElementById('input');
-  const personaSelect = document.getElementById('persona');
 
   function append(who, text) {
     const div = document.createElement('div');
-    div.className = who === 'you' ? 'you' : 'bot';
+    div.className = who === 'you' ? 'you' : (who === 'err' ? 'err' : 'bot');
     div.textContent = (who === 'you' ? 'You: ' : 'Bot: ') + text;
     log.appendChild(div);
     log.scrollTop = log.scrollHeight;
@@ -50,12 +48,16 @@
       const res = await fetch('/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: text, persona: personaSelect.value }),
+        body: JSON.stringify({ message: text, sessionId, persona: PERSONA }),
       });
       const data = await res.json();
-      append('bot', data.reply || data.error || 'No response.');
+      if (data.error) {
+        append('err', data.error);
+      } else {
+        append('bot', data.reply || 'No response.');
+      }
     } catch (err) {
-      append('bot', 'Connection error: ' + err.message);
+      append('err', 'Connection error: ' + err.message);
     }
   });
 </script>
