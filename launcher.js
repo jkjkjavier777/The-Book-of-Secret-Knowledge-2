@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 const readline = require('readline');
 const path = require('path');
+const express = require('express');
+require('dotenv').config();
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -23,23 +25,40 @@ function showMenu() {
 }
 
 function handleChoice(choice) {
+  let interfaceModule;
+
   switch (choice) {
     case '1':
-      rl.close();
-      require(path.join(__dirname, 'interfaces', 'archive.js'));
+      interfaceModule = require(path.join(__dirname, 'interfaces', 'archive.js'));
       break;
     case '2':
-      rl.close();
-      require(path.join(__dirname, 'interfaces', 'browser.js'));
+      interfaceModule = require(path.join(__dirname, 'interfaces', 'browser.js'));
       break;
     case '3':
-      rl.close();
-      require(path.join(__dirname, 'interfaces', 'coding.js'));
+      interfaceModule = require(path.join(__dirname, 'interfaces', 'coding.js'));
       break;
     default:
       console.log('\nInvalid option. Please enter 1, 2, or 3.\n');
-      showMenu();
+      return showMenu();
   }
+
+  rl.close();
+  startServer(interfaceModule);
+}
+
+function startServer({ name, htmlFile }) {
+  const app = express();
+  const PORT = process.env.PORT || 3000;
+
+  app.use(express.static(path.join(__dirname, 'public')));
+
+  app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', htmlFile));
+  });
+
+  app.listen(PORT, () => {
+    console.log(`\n${name} running at http://localhost:${PORT}\n`);
+  });
 }
 
 showMenu();
