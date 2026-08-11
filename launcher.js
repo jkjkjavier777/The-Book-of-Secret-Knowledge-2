@@ -50,7 +50,7 @@ function startServer({ name, htmlFile }) {
   const app = express();
   const PORT = process.env.PORT || 3000;
 
-  app.use(express.static(path.join(__dirname, 'public')));
+  app.use(express.static(path.join(__dirname, 'public'), { index: false }));
 
   app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', htmlFile));
@@ -60,5 +60,4 @@ function startServer({ name, htmlFile }) {
     console.log(`\n${name} running at http://localhost:${PORT}\n`);
   });
 }
-
 showMenu();
