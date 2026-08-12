@@ -5,6 +5,15 @@ const { reason } = require('./reasoning');
 const { pickLine, pickShared } = require('./voice');
 
 async function handleMessage(userInput, session, persona) {
+  if (!session.history) session.history = [];
+
+  if (validator.isRedZoneQuery(userInput)) {
+    const refusal = pickShared('redZone') ||
+      "I'm sorry, I can't help with that request.";
+    session.history.push(refusal);
+    return refusal;
+  }
+
   if (userInput.trim().toLowerCase() === 'help') {
     const line = pickLine(persona.key, 'help') || 'Ask a question.';
     session.history.push(line);
@@ -29,7 +38,7 @@ async function handleMessage(userInput, session, persona) {
     generated = await reason(userInput, persona);
   } catch (err) {
     console.error('[engine] reasoning failed:', err.message);
-    return pickShared('error') || persona.unavailableMessage;
+    return persona.unavailableMessage || pickShared('error');
   }
 
   const genErrors = validator.validateGeneratedText(generated);
