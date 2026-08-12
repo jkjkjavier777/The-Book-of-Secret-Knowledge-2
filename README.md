@@ -16,23 +16,121 @@ Deep understanding (not memorization), intellectual honesty (not shortcuts), and
 
 ---
 
-## 🗂️ Table of Contents**
-**📌 General**
-**💻 Command Line**
-**🖥️ GUI Tools**
-**🌐 Web Tools**
-**🖥️ Systems/Services**
-**🌍 Networks**
-**📦 Containers/Orchestration**
-**📚 Manuals/Howtos/Tutorials**
-**🌟 Inspiring Lists**
-**📺 Blogs/Podcasts/Videos**
-**🔒 Hacking/Penetration Testing**
-**📰 Your daily knowledge and news**
-**📝 Other Cheat Sheets**
-**💻 Shell One-liners**
-**🎯 Shell Tricks**
-**⚙️ Shell Functions**
+## 🗂️ **Table of Contents**
+
+---
+
+### **📌 General**
+- [Awesome Lists](#)
+- [Cheatsheets](#)
+- [Documentation](#)
+- [Notes](#)
+
+---
+
+### **💻 Command Line**
+- [Bash/PowerShell](#)
+- [CLI Tools](#cli-tools)
+- [One-Liners](#shell-one-liners)
+- [Shell Functions](#useful-shell-functions)
+- [Shell Tricks](#shell-tricks)
+
+---
+
+### **🖥️ GUI Tools**
+- [Text Editors](#)
+- [IDEs](#)
+- [Design Tools](#)
+- [Productivity Tools](#)
+
+---
+### **🌐 Web Tools**
+- [Online Editors](#)
+- [Collaboration Tools](#)
+- [API Testing Tools](#)
+- [Web Scraping Tools](#)
+
+---
+### **🖥️ Systems/Services**
+- [Operating Systems](#)
+- [Cloud Services](#)
+- [Monitoring Tools](#)
+- [Logging Tools](#)
+
+---
+### **🌍 Networks**
+- [Network Analysis](#)
+- [Security](#)
+- [Proxies/VPNs](#)
+- [Firewalls](#)
+
+---
+### **📦 Containers/Orchestration**
+- [Docker](#)
+- [Kubernetes](#)
+- [Container Runtimes](#)
+- [Orchestration Tools](#)
+
+---
+### **📚 Manuals/Howtos/Tutorials**
+- [Programming Tutorials](#)
+- [DevOps Tutorials](#)
+- [Security Tutorials](#)
+- [System Administration Tutorials](#)
+
+---
+### **🌟 Inspiring Lists**
+- [Must-Read Books](#)
+- [Must-Watch Talks](#)
+- [Must-Follow Blogs](#)
+- [Must-Listen Podcasts](#)
+
+---
+### **📺 Blogs/Podcasts/Videos**
+- [Tech Blogs](#)
+- [Podcasts](#)
+- [YouTube Channels](#)
+- [Conference Talks](#)
+
+---
+### **🔒 Hacking/Penetration Testing**
+- [Ethical Hacking Tools](#)
+- [Penetration Testing Frameworks](#)
+- [Vulnerability Scanners](#)
+- [Exploit Development](#)
+
+---
+### **📰 Your Daily Knowledge and News**
+- [Tech News Websites](#)
+- [Newsletters](#)
+- [RSS Feeds](#)
+- [Social Media Accounts](#)
+
+---
+### **📝 Other Cheat Sheets**
+- [Language-Specific Cheat Sheets](#)
+- [Framework Cheat Sheets](#)
+- [Tool-Specific Cheat Sheets](#)
+- [Algorithm Cheat Sheets](#)
+
+---
+### **💻 Shell One-Liners**
+- [File Management](#)
+- [System Monitoring](#)
+- [Networking](#)
+
+---
+### **🎯 Shell Tricks**
+- [Background Processes](#)
+- [Backups](#)
+- [Log Monitoring](#)
+
+---
+### **⚙️ Shell Functions**
+- [File Management Functions](#)
+- [System Monitoring Functions](#)
+- [Networking Functions](#)
+---
 
 ---
 
