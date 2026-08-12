@@ -12,7 +12,24 @@
 **BoSK-2.0** is a **framework, not just prompts**. Three complementary AI bots work as one system: **challenge assumptions, explore multiple angles, solve systematically**. Think of it as a **Socratic mentor + study group + debugging partner**, available 24/7.
 
 **College demands three things:** Deep understanding (not memorization), intellectual honesty (not shortcuts), and thinking that transfers (not isolated facts). These bots are built for exactly that.
-
+---
+🗂️ Table of Contents
+📌 General
+💻 Command Line
+🖥️ GUI Tools
+🌐 Web Tools
+🖥️ Systems/Services
+🌍 Networks
+📦 Containers/Orchestration
+📚 Manuals/Howtos/Tutorials
+🌟 Inspiring Lists
+📺 Blogs/Podcasts/Videos
+🔒 Hacking/Penetration Testing
+📰 Your daily knowledge and news
+📝 Other Cheat Sheets
+💻 Shell One-liners
+🎯 Shell Tricks
+⚙️ Shell Functions
 ---
 
 ## 🎯 Section 1: The Three Study Bots
