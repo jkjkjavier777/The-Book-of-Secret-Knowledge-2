@@ -1,0 +1,79 @@
+# 🏗️ Architecture
+
+## System Overview
+
+The collective prompt system operates with three specialized bots working in concert:
+
+### Bot Roles
+
+**1. Coordinator Bot**
+- Manages conversation flow and turn-taking
+- Routes requests to appropriate specialized bots
+- Maintains conversation context and state
+- Synthesizes responses into coherent outputs
+- Handles error recovery and fallback scenarios
+
+**2. Specialist Bot (Domain Expert)**
+- Provides deep expertise in specific domain
+- Executes core task logic
+- Validates outputs against domain standards
+- Suggests optimizations and best practices
+- Maintains knowledge base updates
+
+**3. Validator Bot (Quality Assurance)**
+- Checks outputs for accuracy and completeness
+- Verifies compliance with governance rules
+- Identifies edge cases and risks
+- Provides feedback for refinement
+- Documents validation decisions
+
+## Communication Flow
+
+```
+User Input
+    ↓
+Coordinator Bot (parse & route)
+    ↓
+Specialist Bot (process & execute)
+    ↓
+Validator Bot (verify & check)
+    ↓
+Coordinator Bot (synthesize)
+    ↓
+User Output
+```
+
+## Data Flow
+
+- **Context Window**: Shared conversation history accessible to all bots
+- **State Management**: Coordinator maintains current session state
+- **Validation Results**: Passed back to Specialist for refinement if needed
+- **Decision Trail**: All decisions logged for auditability
+
+## Interaction Patterns
+
+### Standard Workflow
+1. Coordinator receives and parses input
+2. Routes to Specialist with relevant context
+3. Specialist processes and generates response
+4. Validator reviews response and identifies issues
+5. Specialist refines if validation fails
+6. Coordinator formats final output
+
+### Escalation Pattern
+- Complex decisions escalated to Validator first
+- High-risk operations require explicit validation
+- Ambiguous requests trigger Coordinator clarification
+
+### Feedback Loop
+- Validator provides specific feedback
+- Specialist implements corrections
+- Re-validation occurs before output
+- Patterns tracked for continuous improvement
+
+## System Constraints
+
+- **Response Time**: Prioritize efficiency without sacrificing quality
+- **Context Limits**: Manage token usage across three bot interactions
+- **State Consistency**: Ensure all bots operate on same information
+- **Graceful Degradation**: Continue functioning if one bot is unavailable
