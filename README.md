@@ -387,6 +387,165 @@ Science doesn't trust claims without evidence. Your learning shouldn't either.
 ```
 
 ---
+# Chapter 17 📖 Literature
+
+### Header
+📖 **Literature — Reading Between the Lines**
+
+### Description
+Literature study isn't memorization — it's pattern recognition across theme, structure, and voice. This toolkit turns a novel, poem, or play into a set of testable questions: what does the text *argue*, and what evidence does it offer?
+
+### Use Cases
+- Preparing for a seminar discussion on a assigned novel
+- Building a thesis statement for a literary analysis essay
+- Comparing two texts across a shared theme (e.g., isolation, power, memory)
+- Annotating a poem line-by-line for a close reading
+
+### Copy Script
+```
+I'm studying [TEXT TITLE] by [AUTHOR] for a college-level course.
+Help me build a close reading of [CHAPTER/SECTION/POEM].
+Identify: (1) the central tension or conflict, (2) three pieces of
+textual evidence that support a thematic claim, (3) one counter-
+argument a skeptical reader might raise, and (4) a discussion
+question I could bring to seminar.
+```
+
+### Prompt Toolkit Script
+```
+ROLE: You are a literature study partner, not a summarizer.
+TASK: Given a passage or text, do NOT just summarize plot.
+Instead:
+1. State the passage's central tension in one sentence.
+2. Pull 2-3 direct textual details (paraphrased, not quoted at length)
+   that support a thematic reading.
+3. Offer one plausible counter-reading.
+4. End with a single open-ended discussion question.
+FORMAT: Numbered list, no more than 200 words.
+
+[PASTE PASSAGE OR CHAPTER SUMMARY HERE]
+```
+
+---
+
+# Chapter 18 ✍️ Writing
+
+### Header
+✍️ **Writing — Structure Before Style**
+
+### Description
+Good writing is architecture first, decoration second. This toolkit forces a draft through an outline-then-critique cycle so revision has something concrete to grab onto — not just "make it better."
+
+### Use Cases
+- Outlining an argumentative essay before drafting
+- Getting structural (not just grammatical) feedback on a draft
+- Tightening a thesis statement that's too broad or too vague
+- Practicing paragraph-level topic sentences
+
+### Copy Script
+```
+I'm writing a [ESSAY TYPE] on [TOPIC] for a college course.
+My working thesis is: [THESIS].
+Help me: (1) stress-test the thesis for specificity, (2) propose a
+3-4 point structure, (3) flag where I'll need the strongest evidence,
+and (4) suggest one likely counterargument I should address.
+```
+
+### Prompt Toolkit Script
+```
+ROLE: You are a writing coach focused on structure and argument,
+not line-editing.
+TASK: Given a thesis and rough outline:
+1. Rate thesis specificity (too broad / workable / too narrow) with
+   a one-line reason.
+2. Propose a logical paragraph order (topic sentence per paragraph).
+3. Identify the weakest evidentiary gap.
+4. Name one counterargument the essay should address.
+FORMAT: Short numbered sections, no full paragraphs of prose back.
+
+[PASTE THESIS + OUTLINE HERE]
+```
+
+---
+
+# Chapter 19 🧪 Chemistry
+
+### Header
+🧪 **Chemistry — From Equation to Intuition**
+
+### Description
+Chemistry problems fail students not because the math is hard, but because the *why* behind a reaction gets skipped. This toolkit pairs every calculation with a plain-language mechanism check.
+
+### Use Cases
+- Working through stoichiometry or equilibrium problem sets
+- Building intuition for reaction mechanisms before an exam
+- Checking unit consistency and significant figures on a solved problem
+- Reviewing a lab report's theoretical background section
+
+### Copy Script
+```
+I'm working on [TOPIC: stoichiometry / equilibrium / kinetics / etc.]
+for college chemistry. Here's my problem and attempted solution:
+[PROBLEM + WORK]
+Check my math, but more importantly, tell me if my reasoning about
+*why* the reaction behaves this way is correct.
+```
+
+### Prompt Toolkit Script
+```
+ROLE: You are a chemistry TA. Prioritize conceptual correctness
+over just checking arithmetic.
+TASK: Given a problem and a student's attempted solution:
+1. Confirm or correct the numerical answer, showing where an error
+   (if any) occurred.
+2. State the underlying principle/mechanism in one or two sentences.
+3. Flag any unit or sig-fig issues.
+4. Suggest one related problem type the student should also practice.
+FORMAT: Numbered, concise, no unnecessary preamble.
+
+[PASTE PROBLEM + WORK HERE]
+```
+
+---
+
+# Chapter 20 💻 Coding
+
+### Header
+💻 **Coding — Debug the Reasoning, Not Just the Syntax**
+
+### Description
+Most coding help stops at "here's the fix." This toolkit asks for the *why* behind the bug so the same mistake doesn't repeat next week — the same debugging discipline used elsewhere in this book's Retrieval and Validation layers.
+
+### Use Cases
+- Debugging a script that throws an unexpected error
+- Reviewing a function for logic errors before submission
+- Understanding why a working solution is inefficient
+- Prepping for a coding concept exam (data structures, algorithms)
+
+### Copy Script
+```
+I'm working in [LANGUAGE] on [ASSIGNMENT/PROJECT]. Here's my code
+and the error/unexpected behavior I'm seeing:
+[CODE + ERROR]
+Explain the root cause before giving me the fix.
+```
+
+### Prompt Toolkit Script
+```
+ROLE: You are a coding study partner focused on root-cause
+understanding, not just patching code.
+TASK: Given code and an error or unexpected output:
+1. Identify the root cause in one or two sentences (not just "add
+   a semicolon" — explain WHY it broke).
+2. Provide the corrected code.
+3. Note one related concept the student should review to avoid
+   this class of bug in the future.
+FORMAT: Explanation first, code block second, note last.
+
+[PASTE CODE + ERROR HERE]
+```
+
+---
 
 ## 📜 License: Free Knowledge for Free Learners 🕊️
 
