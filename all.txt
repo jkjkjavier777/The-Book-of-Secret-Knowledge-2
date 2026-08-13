@@ -1,0 +1,17 @@
+engine/:
+__mocks__
+boundedGlitchEngine
+formatter
+identity
+knowledge
+memory
+mistral
+reasoning
+retrieval
+validator
+voice
+
+personas/:
+bge
+bosk
+coding
