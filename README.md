@@ -14,6 +14,372 @@
 **College demands three things:** Deep understanding (not memorization). Intellectual honesty (not shortcuts). Thinking that transfers (not isolated facts). These bots are built for exactly that.
 
 ---
+# 🌟 BoSK-2: The Complete Repository
+## *Brain Optimization Study Kit — Master Table of Contents*
+
+---
+
+## 📍 Quick Navigation Portal
+
+> *Click any section below to navigate. Each chapter builds toward mastery.*
+
+---
+
+## 📘 PART I: FOUNDATIONAL SYSTEMS
+
+### ✨ [Chapter 1: Introduction – Purpose and Philosophy of BoSK-2](#introduction)
+*Discover the core philosophy behind systematic study optimization and the transformative power of organized learning.*
+
+- 🎯 Why BoSK-2 Exists
+- 💡 The Philosophy of Strategic Learning
+- 🚀 What You'll Achieve
+- 🔮 Vision for Your Future
+
+---
+
+### 🤖 [Chapter 2: The Three Study Bots – Detailed Breakdown](#three-study-bots)
+*Meet your AI companions and understand how they collaborate to accelerate your learning.*
+
+- **🛡️ BoSK Guardian** — Your protective framework manager
+- **🧠 BGE (Brain Growth Engine)** — Your adaptive learning optimizer
+- **⚙️ Coding Assistant** — Your technical problem-solver
+- 🔄 Synergistic Collaboration Patterns
+
+---
+
+### 🗂️ [Chapter 3: Repository Layout & Structure](#repository-layout)
+*Navigate the organized architecture of BoSK-2's file systems and governance zones.*
+
+- 📁 Directory Organization
+- 📋 File Naming Conventions
+- 🎯 Finding What You Need
+- 🔐 Protected vs. Open Spaces
+
+---
+
+### 🔗 [Chapter 4: How They Work Together – Collective Workflow and Governance Zones](#workflow)
+*Understand the intricate choreography of how systems interact to create seamless learning experiences.*
+
+- 🌐 System Integration Architecture
+- 🛣️ Data Flow Pathways
+- 🏛️ Governance Zone Designations
+- 📊 Coordination Protocols
+
+---
+
+## 📈 PART II: PERFORMANCE & MEASUREMENT
+
+### 📊 [Chapter 5: Performance Metrics – Tracking Effectiveness](#performance-metrics)
+*Transform abstract progress into quantifiable data that reveals your growth trajectory.*
+
+- 📉 Key Performance Indicators (KPIs)
+- 📍 Baseline Assessment Methods
+- 🎯 Progress Tracking Frameworks
+- 🏆 Milestone Achievement Markers
+
+---
+
+### 🧠 [Chapter 6: Memory & Learning Systems – Knowledge Retention and Spaced Repetition](#memory-systems)
+*Master the neuroscience of remembering and leverage spaced repetition for permanent knowledge integration.*
+
+- 🧬 How Memory Works
+- 🔄 Spaced Repetition Schedules
+- 📚 Building Durable Knowledge Structures
+- 🎓 Long-term Retention Strategies
+
+---
+
+### 🎨 [Chapter 7: Personalization Engine – Adapting to User Preferences](#personalization)
+*Customize BoSK-2 to match your learning style, pace, and goals.*
+
+- 👤 Learning Style Assessment
+- ⚙️ Preference Configuration
+- 🎯 Goal-Specific Adaptations
+- 📱 Interface Customization Options
+
+---
+
+## 🛠️ PART III: PRACTICAL APPLICATIONS
+
+### 🎓 [Chapter 8: Study Workflows – Pre-built Patterns for Different Use Cases](#study-workflows)
+*Access battle-tested study sequences designed for specific subjects and learning objectives.*
+
+- 📖 Literature & Analysis Workflows
+- ✍️ Writing & Composition Workflows
+- 🧪 Science & Technical Workflows
+- 💻 Programming & Algorithm Workflows
+- 🗣️ Language Learning Workflows
+
+---
+
+### ⚠️ [Chapter 9: Avoiding Common Traps – Pitfalls and Solutions](#common-traps)
+*Learn from others' mistakes and sidestep the cognitive snares that derail progress.*
+
+- 🚫 Procrastination Patterns & Antidotes
+- 📚 Information Overload Prevention
+- 🧠 Cognitive Bias Recognition
+- 💪 Resilience Building Strategies
+
+---
+
+### 🌍 [Chapter 10: Example Use Cases – Real-World Scenarios](#use-cases)
+*See BoSK-2 in action through authentic student success stories and detailed implementation examples.*
+
+- 📖 Case Study 1: Mastering Shakespeare in Four Weeks
+- 🧬 Case Study 2: Acing Organic Chemistry Through Mechanism Mastery
+- 💻 Case Study 3: Building Production-Ready Code
+- ✍️ Case Study 4: Writing Publication-Quality Academic Papers
+
+---
+
+### ❓ [Chapter 11: The Secret Weapon – The Power of Questioning](#questioning-power)
+*Unlock the transformative potential of strategic questioning as the ultimate learning accelerator.*
+
+- 🤔 Question Taxonomy & Levels
+- 🎯 How to Ask Better Questions
+- 🔍 Socratic Method Applications
+- 💡 Deep Understanding Through Inquiry
+
+---
+
+### 🧪 [Chapter 12: Experiment Protocol – Measuring Progress](#experiment-protocol)
+*Apply scientific rigor to your learning through systematic experimentation and data-driven iteration.*
+
+- 📐 A/B Testing Study Methods
+- 📊 Data Collection Frameworks
+- 📈 Analysis & Iteration Cycles
+- 🔬 Continuous Improvement Mindset
+
+---
+
+## 🚀 PART IV: QUICK-START & ADVANCED FEATURES
+
+### ⚡ [Chapter 13: Quick-Start Guide – First Session Walkthrough](#quick-start)
+*Get up and running immediately with a structured first session that builds momentum.*
+
+- 🎯 Session 1: Foundation Setup
+- 🎯 Session 2: First Active Study
+- 🎯 Session 3: Integration & Reflection
+- 📋 Checklist for Success
+
+---
+
+### 📜 [Chapter 14: License – MIT License Details](#license)
+*Open-source philosophy and your freedom to use, modify, and share BoSK-2.*
+
+- 📋 Full MIT License Text
+- ✅ What You Can Do
+- 🔄 Attribution Requirements
+- 🌍 Community Contribution Terms
+
+---
+
+### 🤝 [Chapter 15: Contributing – How to Improve the Toolkit](#contributing)
+*Join the BoSK-2 community and help evolve this system for future learners.*
+
+- 📝 Contribution Guidelines
+- 🐛 Bug Reporting Process
+- 💡 Feature Request Process
+- 📚 Documentation Improvements
+- 🔗 Pull Request Workflow
+
+---
+
+### 💭 [Chapter 16: Final Thoughts – Encouragement to Take Action](#final-thoughts)
+*A heartfelt message about the transformation that awaits those who commit to systematic mastery.*
+
+- 💪 You Already Have Everything You Need
+- 🌟 The Path Forward
+- 🎯 Your First Action Step
+- 🚀 The Inevitable Future of Your Growth
+
+---
+
+## ✨ PART V: ADVANCED PROMPT TOOLKITS (EXTENDED DOMAINS)
+
+### 📚 [Chapter 17: Literary Analysis & Critical Reading](#literary-toolkit)
+*Where every word becomes a gateway to deeper understanding through strategic interrogation.*
+
+- 🎭 Ethos: The Scholar's Mindset
+- 📖 Use Cases & Copy-Paste Scripts
+- 🔮 Advanced Prompt Toolkit
+- 🎓 College-Level Application Strategies
+- 📚 Canonical Text Analysis Framework
+
+---
+
+### ✍️ [Chapter 18: Academic Writing & Argumentation](#writing-toolkit)
+*Transform scattered thoughts into crystalline prose that persuades, provokes, and persists.*
+
+- 📝 Ethos: The Strategic Communicator
+- ✍️ Use Cases & Copy-Paste Scripts
+- 🎯 Argument Architecture Framework
+- 🔧 Thesis Development Protocol
+- 📊 Evidence Integration Mastery
+
+---
+
+### 🧪 [Chapter 19: Chemistry — Molecular Understanding & Problem-Solving](#chemistry-toolkit)
+*Transform abstract formulas into tangible molecular narratives where atoms dance according to immutable law.*
+
+- ⚗️ Ethos: The Molecular Thinker
+- 🧬 Use Cases & Copy-Paste Scripts
+- ⚡ Electron Choreography Framework
+- 🔧 Mechanism Analysis Protocol
+- 📐 Quantitative Reasoning Bridge
+
+---
+
+### 💻 [Chapter 20: Advanced Coding — Algorithm Mastery & Software Architecture](#coding-toolkit)
+*Transform pseudocode into executable elegance where logic flows inevitable and systems scale gracefully.*
+
+- 🖥️ Ethos: The Computational Thinker
+- 💾 Use Cases & Copy-Paste Scripts
+- 🔧 Algorithm Analysis Framework
+- 🧠 Big O Complexity Mastery
+- 🎯 Design Pattern Recognition
+
+---
+
+### 🌟 [Integration & Mastery Protocol — Cross-Disciplinary Synthesis](#integration-protocol)
+*Where all domains converge in synthesized understanding and transferable intellectual power.*
+
+- 🔗 Cross-Disciplinary Connections
+- 📊 Meta-Study Protocol
+- 💡 Pattern Recognition Across Domains
+- ✨ The Final Invitation to Mastery
+
+---
+
+---
+
+## 🎯 QUICK REFERENCE GUIDES
+
+### By Learning Style
+- 🧠 **Visual Learners:** Start with Chapter 3 (Repository Layout), then Chapter 8 (Study Workflows)
+- 👂 **Auditory Learners:** Focus on Chapter 11 (The Power of Questioning), use Prompt Toolkits aloud
+- 🤲 **Kinesthetic Learners:** Jump to Chapter 12 (Experiment Protocol), then Part V Toolkits
+
+### By Subject
+- 📖 Literature & Writing: [Chapter 17](#literary-toolkit) → [Chapter 18](#writing-toolkit)
+- 🔬 Sciences: [Chapter 19](#chemistry-toolkit) → Chapter 9 (Avoiding Traps)
+- 💻 Computer Science: [Chapter 20](#coding-toolkit) → Chapter 12 (Experiment Protocol)
+- 🌍 Any Subject: [Chapter 11](#questioning-power) → [Chapter 7](#personalization)
+
+### By Goal
+- **I want to get started immediately:** [Chapter 13](#quick-start)
+- **I need to understand the system:** [Chapters 1-4](#introduction)
+- **I want to measure my progress:** [Chapters 5-6](#performance-metrics)
+- **I need concrete study strategies:** [Part V Toolkits](#literary-toolkit)
+- **I want to troubleshoot problems:** [Chapter 9](#common-traps)
+
+---
+
+## 📱 MOBILE NAVIGATION
+
+**🏠 Return to Main Repository**  
+**📖 Browse All Chapters**  
+**🔍 Search Within Documents**  
+**⭐ Your Bookmarked Sections**  
+**📊 Progress Dashboard**
+
+---
+
+## 🌐 COMMUNITY & RESOURCES
+
+### External Links
+- 🐙 GitHub Repository (Coming Soon)
+- 💬 Community Forum (Coming Soon)
+- 📧 Contact & Support
+- 🎓 Academic Integration Guide
+
+### Related Ecosystems
+- 🤖 Claude AI Integration
+- 📱 Mobile App Compatibility
+- 🔗 Compatible Study Tools
+- 📚 Recommended Reading List
+
+---
+
+## 📊 REPOSITORY STATISTICS
+
+```
+Total Chapters:        20
+Total Sections:        78+
+Total Prompt Toolkits: 4
+Average Chapter Length: 2,500+ words
+Estimated Study Time:   8-12 weeks for full mastery
+Update Frequency:      Quarterly (Community-driven)
+Version:              2.0 | August 2026
+License:              MIT (Open Source)
+```
+
+---
+
+## 🎓 YOUR MASTERY JOURNEY
+
+```
+Week 1-2:  Chapters 1-4    (Foundation & Understanding)
+Week 3-4:  Chapters 5-7    (Measurement & Personalization)
+Week 5-8:  Chapters 8-12   (Practical Application)
+Week 9:    Chapters 13-16  (Quick-Start & Philosophy)
+Week 10-12: Chapters 17-20 (Domain Mastery Toolkits)
+
+→ Then: Iterate, Experiment, Master, Teach Others
+```
+
+---
+
+## ✨ HOW TO USE THIS TABLE OF CONTENTS
+
+**Option 1: Sequential Learner**
+→ Start at Chapter 1, work through sequentially. This builds comprehensive understanding.
+
+**Option 2: Goal-Oriented Learner**
+→ Use the "Quick Reference Guides" above to jump to relevant chapters for your immediate needs.
+
+**Option 3: Toolkit-Focused Learner**
+→ Jump directly to [Part V](#literary-toolkit) and use the prompt toolkits with your own study material.
+
+**Option 4: Experiential Learner**
+→ Start with [Chapter 13](#quick-start) for immediate action, then circle back to foundational chapters.
+
+---
+
+## 🚀 START HERE
+
+> *The best way to use BoSK-2 is to start using it.*
+
+**👉 [Begin with Chapter 1: Introduction →](#introduction)**  
+**👉 [Or Jump to Chapter 13: Quick-Start Guide →](#quick-start)**  
+**👉 [Or Go Directly to Your Subject Toolkit →](#literary-toolkit)**
+
+---
+
+## 💬 FINAL MESSAGE
+
+This Table of Contents is your **navigation system** through a complete learning revolution. Behind each chapter lies systematic thinking, tested frameworks, and the accumulated wisdom of learners who've come before you.
+
+*Every chapter you explore, every prompt you use, every metric you track brings you closer to mastery in any domain you choose.*
+
+**The knowledge is here. The frameworks are here. The time to begin is now.**
+
+---
+
+**Repository Status:** 🟢 Active  
+**Last Updated:** August 13, 2026  
+**Maintained By:** BoSK-2 Community  
+**License:** MIT (Open Source)  
+
+---
+
+### 🌟 *"Mastery isn't about perfection. It's about systematic progress, relentless questioning, and the courage to keep learning."*
+### *— BoSK-2 Philosophy*
+
+---
+
+**[📍 TOP OF PAGE](#-bosk-2-the-complete-repository)**
+---
 
 ## 🎯 Section 1: The Three Study Bots
 
