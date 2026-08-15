@@ -18,6 +18,212 @@
 ## *Brain Optimization Study Kit — Master Table of Contents*
 
 ---
+## 🌟 **Table of Contents**
+
+---
+
+### **📘 PART I: FOUNDATIONAL SYSTEMS**
+
+- [Chapter 1: Introduction – Purpose and Philosophy of BoSK-2](#)
+  - Why BoSK-2 Exists
+  - The Philosophy of Strategic Learning
+  - What You'll Achieve
+  - Vision for Your Future
+
+- [Chapter 2: The Three Study Bots – Detailed Breakdown](#)
+  - 🛡️ **BoSK Guardian** — Your protective framework manager
+  - 🧠 **BGE (Brain Growth Engine)** — Your adaptive learning optimizer
+  - ⚙️ **Coding Assistant** — Your technical problem-solver
+  - Synergistic Collaboration Patterns
+
+- [Chapter 3: Repository Layout & Structure](#)
+  - Directory Organization
+  - File Naming Conventions
+  - Finding What You Need
+  - Protected vs. Open Spaces
+
+- [Chapter 4: How They Work Together – Collective Workflow and Governance Zones](#)
+  - System Integration Architecture
+  - Data Flow Pathways
+  - Governance Zone Designations
+  - Coordination Protocols
+
+---
+
+### **📈 PART II: PERFORMANCE & MEASUREMENT**
+
+- [Chapter 5: Performance Metrics – Tracking Effectiveness](#)
+  - Key Performance Indicators (KPIs)
+  - Baseline Assessment Methods
+  - Progress Tracking Frameworks
+  - Milestone Achievement Markers
+
+- [Chapter 6: Memory & Learning Systems – Knowledge Retention and Spaced Repetition](#)
+  - How Memory Works
+  - Spaced Repetition Schedules
+  - Building Durable Knowledge Structures
+  - Long-term Retention Strategies
+
+- [Chapter 7: Personalization Engine – Adapting to User Preferences](#)
+  - Learning Style Assessment
+  - Preference Configuration
+  - Goal-Specific Adaptations
+  - Interface Customization Options
+
+---
+
+### **🛠️ PART III: PRACTICAL APPLICATIONS**
+
+- [Chapter 8: Study Workflows – Pre-built Patterns for Different Use Cases](#)
+  - Literature & Analysis Workflows
+  - Writing & Composition Workflows
+  - Science & Technical Workflows
+  - Programming & Algorithm Workflows
+  - Language Learning Workflows
+
+- [Chapter 9: Avoiding Common Traps – Pitfalls and Solutions](#)
+  - Procrastination Patterns & Antidotes
+  - Information Overload Prevention
+  - Cognitive Bias Recognition
+  - Resilience Building Strategies
+
+- [Chapter 10: Example Use Cases – Real-World Scenarios](#)
+  - Case Study 1: Mastering Shakespeare in Four Weeks
+  - Case Study 2: Acing Organic Chemistry Through Mechanism Mastery
+  - Case Study 3: Building Production-Ready Code
+  - Case Study 4: Writing Publication-Quality Academic Papers
+
+- [Chapter 11: The Secret Weapon – The Power of Questioning](#)
+  - Question Taxonomy & Levels
+  - How to Ask Better Questions
+  - Socratic Method Applications
+  - Deep Understanding Through Inquiry
+
+- [Chapter 12: Experiment Protocol – Measuring Progress](#)
+  - A/B Testing Study Methods
+  - Data Collection Frameworks
+  - Analysis & Iteration Cycles
+  - Continuous Improvement Mindset
+
+---
+### **🚀 PART IV: QUICK-START & ADVANCED FEATURES**
+
+- [Chapter 13: Quick-Start Guide – First Session Walkthrough](#)
+  - Session 1: Foundation Setup
+  - Session 2: First Active Study
+  - Session 3: Integration & Reflection
+  - Checklist for Success
+
+- [Chapter 14: License – MIT License Details](#)
+  - Full MIT License Text
+  - What You Can Do
+  - Attribution Requirements
+  - Community Contribution Terms
+
+- [Chapter 15: Contributing – How to Improve the Toolkit](#)
+  - Contribution Guidelines
+  - Bug Reporting Process
+  - Feature Request Process
+  - Documentation Improvements
+  - Pull Request Workflow
+
+- [Chapter 16: Final Thoughts – Encouragement to Take Action](#)
+  - You Already Have Everything You Need
+  - The Path Forward
+  - Your First Action Step
+  - The Inevitable Future of Your Growth
+
+---
+### **✨ PART V: ADVANCED PROMPT TOOLKITS (EXTENDED DOMAINS)**
+
+- [Chapter 17: Literary Analysis & Critical Reading](#)
+  - Ethos: The Scholar's Mindset
+  - Use Cases & Copy-Paste Scripts
+  - Advanced Prompt Toolkit
+  - College-Level Application Strategies
+  - Canonical Text Analysis Framework
+
+- [Chapter 18: Academic Writing & Argumentation](#)
+  - Ethos: The Strategic Communicator
+  - Use Cases & Copy-Paste Scripts
+  - Argument Architecture Framework
+  - Thesis Development Protocol
+  - Evidence Integration Mastery
+
+- [Chapter 19: Chemistry — Molecular Understanding & Problem-Solving](#)
+  - Ethos: The Molecular Thinker
+  - Use Cases & Copy-Paste Scripts
+  - Electron Choreography Framework
+  - Mechanism Analysis Protocol
+  - Quantitative Reasoning Bridge
+
+- [Chapter 20: Advanced Coding — Algorithm Mastery & Software Architecture](#)
+  - Ethos: The Computational Thinker
+  - Use Cases & Copy-Paste Scripts
+  - Algorithm Analysis Framework
+  - Big O Complexity Mastery
+  - Design Pattern Recognition
+
+---
+### **🎯 Quick Reference Guides**
+
+#### **By Learning Style**
+- 🧠 **Visual Learners:** Start with Chapter 3 (Repository Layout), then Chapter 8 (Study Workflows)
+- 👂 **Auditory Learners:** Focus on Chapter 11 (The Power of Questioning), use Prompt Toolkits aloud
+- 🤲 **Kinesthetic Learners:** Jump to Chapter 12 (Experiment Protocol), then Part V Toolkits
+
+#### **By Subject**
+- 📖 **Literature & Writing:** [Chapter 17](#) → [Chapter 18](#)
+- 🔬 **Sciences:** [Chapter 19](#) → Chapter 9 (Avoiding Traps)
+- 💻 **Computer Science:** [Chapter 20](#) → Chapter 12 (Experiment Protocol)
+- 🌍 **Any Subject:** [Chapter 11](#) → [Chapter 7](#)
+
+#### **By Goal**
+- **I want to get started immediately:** [Chapter 13](#)
+- **I need to understand the system:** [Chapters 1-4](#)
+- **I want to measure my progress:** [Chapters 5-6](#)
+- **I need concrete study strategies:** [Part V Toolkits](#)
+- **I want to troubleshoot problems:** [Chapter 9](#)
+
+---
+---
+### **📱 Mobile Navigation**
+
+- 🏠 Return to Main Repository
+- 📖 Browse All Chapters
+- 🔍 Search Within Documents
+- ⭐ Your Bookmarked Sections
+- 📊 Progress Dashboard
+
+---
+---
+### **🌐 Community & Resources**
+
+#### **External Links**
+- 🐙 GitHub Repository
+- 💬 Community Forum
+- 📧 Contact & Support
+- 🎓 Academic Integration Guide
+
+#### **Related Ecosystems**
+- 🤖 Claude AI Integration
+- 📱 Mobile App Compatibility
+- 🔗 Compatible Study Tools
+- 📚 Recommended Reading List
+
+---
+---
+**Repository Status:** 🟢 Active
+**Last Updated:** August 13, 2026
+**Maintained By:** BoSK-2 Community
+**License:** MIT (Open Source)
+
+---
+### **🌟 *"Mastery isn't about perfection. It's about systematic progress, relentless questioning, and the courage to keep learning."*
+### *— BoSK-2 Philosophy*
+
+---
+**[📍 TOP OF PAGE](#-bosk-2-the-complete-repository)**
 
 ## 📍 Quick Navigation Portal
 
