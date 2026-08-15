@@ -14,156 +14,81 @@
 **College demands three things:** Deep understanding (not memorization). Intellectual honesty (not shortcuts). Thinking that transfers (not isolated facts). These bots are built for exactly that.
 
 ---
-# 🌟 BoSK-2: The Complete Repository
-## *Brain Optimization Study Kit — Master Table of Contents*
-
----
-## 🌟 **Table of Contents**
+# 📚 **The Book of Secret Knowledge 2.0: Table of Contents**
 
 ---
 
-### **📘 PART I: FOUNDATIONAL SYSTEMS**
-
-- [Chapter 1: Introduction – Purpose and Philosophy of BoSK-2](#)
-  - Why BoSK-2 Exists
-  - The Philosophy of Strategic Learning
-  - What You'll Achieve
-  - Vision for Your Future
-
-- [Chapter 2: The Three Study Bots – Detailed Breakdown](#)
-  - 🛡️ **BoSK Guardian** — Your protective framework manager
-  - 🧠 **BGE (Brain Growth Engine)** — Your adaptive learning optimizer
-  - ⚙️ **Coding Assistant** — Your technical problem-solver
-  - Synergistic Collaboration Patterns
-
-- [Chapter 3: Repository Layout & Structure](#)
-  - Directory Organization
-  - File Naming Conventions
-  - Finding What You Need
-  - Protected vs. Open Spaces
-
-- [Chapter 4: How They Work Together – Collective Workflow and Governance Zones](#)
-  - System Integration Architecture
-  - Data Flow Pathways
-  - Governance Zone Designations
-  - Coordination Protocols
+## **📘 PART I: FOUNDATIONAL SYSTEMS**
+- Chapter 1: Introduction – Purpose and Philosophy of BoSK-2
+- Chapter 2: The Three Study Bots – Detailed Breakdown
+- Chapter 3: Repository Layout & Structure
+- Chapter 4: How They Work Together – Collective Workflow and Governance Zones
 
 ---
 
-### **📈 PART II: PERFORMANCE & MEASUREMENT**
-
-- [Chapter 5: Performance Metrics – Tracking Effectiveness](#)
-  - Key Performance Indicators (KPIs)
-  - Baseline Assessment Methods
-  - Progress Tracking Frameworks
-  - Milestone Achievement Markers
-
-- [Chapter 6: Memory & Learning Systems – Knowledge Retention and Spaced Repetition](#)
-  - How Memory Works
-  - Spaced Repetition Schedules
-  - Building Durable Knowledge Structures
-  - Long-term Retention Strategies
-
-- [Chapter 7: Personalization Engine – Adapting to User Preferences](#)
-  - Learning Style Assessment
-  - Preference Configuration
-  - Goal-Specific Adaptations
-  - Interface Customization Options
+## **📈 PART II: PERFORMANCE & MEASUREMENT**
+- Chapter 5: Performance Metrics – Tracking Effectiveness
+- Chapter 6: Memory & Learning Systems – Knowledge Retention and Spaced Repetition
+- Chapter 7: Personalization Engine – Adapting to User Preferences
 
 ---
 
-### **🛠️ PART III: PRACTICAL APPLICATIONS**
-
-- [Chapter 8: Study Workflows – Pre-built Patterns for Different Use Cases](#)
-  - Literature & Analysis Workflows
-  - Writing & Composition Workflows
-  - Science & Technical Workflows
-  - Programming & Algorithm Workflows
-  - Language Learning Workflows
-
-- [Chapter 9: Avoiding Common Traps – Pitfalls and Solutions](#)
-  - Procrastination Patterns & Antidotes
-  - Information Overload Prevention
-  - Cognitive Bias Recognition
-  - Resilience Building Strategies
-
-- [Chapter 10: Example Use Cases – Real-World Scenarios](#)
-  - Case Study 1: Mastering Shakespeare in Four Weeks
-  - Case Study 2: Acing Organic Chemistry Through Mechanism Mastery
-  - Case Study 3: Building Production-Ready Code
-  - Case Study 4: Writing Publication-Quality Academic Papers
-
-- [Chapter 11: The Secret Weapon – The Power of Questioning](#)
-  - Question Taxonomy & Levels
-  - How to Ask Better Questions
-  - Socratic Method Applications
-  - Deep Understanding Through Inquiry
-
-- [Chapter 12: Experiment Protocol – Measuring Progress](#)
-  - A/B Testing Study Methods
-  - Data Collection Frameworks
-  - Analysis & Iteration Cycles
-  - Continuous Improvement Mindset
+## **🛠️ PART III: PRACTICAL APPLICATIONS**
+- Chapter 8: Study Workflows – Pre-built Patterns for Different Use Cases
+- Chapter 9: Avoiding Common Traps – Pitfalls and Solutions
+- Chapter 10: Example Use Cases – Real-World Scenarios
+- Chapter 11: The Secret Weapon – The Power of Questioning
+- Chapter 12: Experiment Protocol – Measuring Progress
 
 ---
-### **🚀 PART IV: QUICK-START & ADVANCED FEATURES**
-
-- [Chapter 13: Quick-Start Guide – First Session Walkthrough](#)
-  - Session 1: Foundation Setup
-  - Session 2: First Active Study
-  - Session 3: Integration & Reflection
-  - Checklist for Success
-
-- [Chapter 14: License – MIT License Details](#)
-  - Full MIT License Text
-  - What You Can Do
-  - Attribution Requirements
-  - Community Contribution Terms
-
-- [Chapter 15: Contributing – How to Improve the Toolkit](#)
-  - Contribution Guidelines
-  - Bug Reporting Process
-  - Feature Request Process
-  - Documentation Improvements
-  - Pull Request Workflow
-
-- [Chapter 16: Final Thoughts – Encouragement to Take Action](#)
-  - You Already Have Everything You Need
-  - The Path Forward
-  - Your First Action Step
-  - The Inevitable Future of Your Growth
+## **🚀 PART IV: QUICK-START & ADVANCED FEATURES**
+- Chapter 13: Quick-Start Guide – First Session Walkthrough
+- Chapter 14: License – MIT License Details
+- Chapter 15: Contributing – How to Improve the Toolkit
+- Chapter 16: Final Thoughts – Encouragement to Take Action
 
 ---
-### **✨ PART V: ADVANCED PROMPT TOOLKITS (EXTENDED DOMAINS)**
+## **✨ PART V: ADVANCED PROMPT TOOLKITS (EXTENDED DOMAINS)**
+- Chapter 17: Literary Analysis & Critical Reading
+- Chapter 18: Academic Writing & Argumentation
+- Chapter 19: Chemistry — Molecular Understanding & Problem-Solving
+- Chapter 20: Advanced Coding — Algorithm Mastery & Software Architecture
 
-- [Chapter 17: Literary Analysis & Critical Reading](#)
-  - Ethos: The Scholar's Mindset
-  - Use Cases & Copy-Paste Scripts
-  - Advanced Prompt Toolkit
-  - College-Level Application Strategies
-  - Canonical Text Analysis Framework
+---
+## **🎯 Quick Reference Guides**
+- By Learning Style
+- By Subject
+- By Goal
 
-- [Chapter 18: Academic Writing & Argumentation](#)
-  - Ethos: The Strategic Communicator
-  - Use Cases & Copy-Paste Scripts
-  - Argument Architecture Framework
-  - Thesis Development Protocol
-  - Evidence Integration Mastery
+---
+## **📱 Mobile Navigation**
+- Return to Main Repository
+- Browse All Chapters
+- Search Within Documents
+- Your Bookmarked Sections
+- Progress Dashboard
 
-- [Chapter 19: Chemistry — Molecular Understanding & Problem-Solving](#)
-  - Ethos: The Molecular Thinker
-  - Use Cases & Copy-Paste Scripts
-  - Electron Choreography Framework
-  - Mechanism Analysis Protocol
-  - Quantitative Reasoning Bridge
+---
+## **🌐 Community & Resources**
+- External Links
+- Related Ecosystems
 
-- [Chapter 20: Advanced Coding — Algorithm Mastery & Software Architecture](#)
-  - Ethos: The Computational Thinker
-  - Use Cases & Copy-Paste Scripts
-  - Algorithm Analysis Framework
-  - Big O Complexity Mastery
-  - Design Pattern Recognition
+---
+## **📊 Repository Statistics**
 
+---
+## **🎓 Your Mastery Journey**
+
+---
+## **✨ How to Use This Table of Contents**
+
+---
+## **🚀 Start Here**
+
+---
+## **💬 Final Message**
+
+---
 ---
 ### **🎯 Quick Reference Guides**
 
