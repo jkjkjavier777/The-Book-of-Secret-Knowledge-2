@@ -2,64 +2,595 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Coding Assistant</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Study Desk</title>
 <style>
-  body { font-family: monospace; background: #0b0b0b; color: #d6d6d6; max-width: 720px; margin: 40px auto; padding: 0 16px; }
-  h1 { color: #9fd6ff; font-size: 1.1rem; }
-  #log { border: 1px solid #333; padding: 12px; height: 65vh; overflow-y: auto; white-space: pre-wrap; background: #111; }
-  .you { color: #9fd6ff; }
-  .bot { color: #d6d6d6; }
-  .err { color: #ff8f8f; }
-  form { display: flex; gap: 8px; margin-top: 12px; }
-  input { flex: 1; background: #111; color: #eee; border: 1px solid #333; padding: 8px; font-family: monospace; }
-  button { background: #222; color: #eee; border: 1px solid #444; padding: 8px 16px; cursor: pointer; }
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+  :root{
+    --ink:      #0B0D10;
+    --panel:    #14171B;
+    --panel-2:  #1B1F26;
+    --line:     #262B31;
+    --bone:     #E8E6E1;
+    --slate:    #6B7078;
+    --slate-dim:#454A50;
+
+    --accent: #C9A227; /* overwritten per active subject */
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html,body{ height:100%; }
+  body{
+    background:var(--ink);
+    color:var(--bone);
+    font-family:'JetBrains Mono', monospace;
+    display:flex;
+    justify-content:center;
+    padding:32px 16px 0;
+    min-height:100%;
+  }
+  ::selection{ background:var(--accent); color:var(--ink); }
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:0.01ms !important; transition-duration:0.01ms !important; }
+  }
+
+  .desk{
+    width:100%;
+    max-width:760px;
+    display:flex;
+    flex-direction:column;
+  }
+
+  .desk-head{ margin-bottom:22px; }
+  .desk-head .eyebrow{
+    font-size:.64rem;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:var(--slate);
+  }
+  .desk-head h1{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:1.7rem;
+    margin-top:4px;
+  }
+  .desk-head h1 em{ font-style:italic; color:var(--accent); transition:color .3s ease; }
+
+  /* ---------- Tabs: index-card catalog ---------- */
+  .tabs{
+    display:flex;
+    gap:6px;
+    overflow-x:auto;
+    scrollbar-width:none;
+    padding:0 2px;
+  }
+  .tabs::-webkit-scrollbar{ display:none; }
+
+  .tab{
+    --tab-accent: #6B7078;
+    flex:1;
+    min-width:118px;
+    background:var(--panel-2);
+    border:1px solid var(--line);
+    border-bottom:none;
+    border-radius:8px 8px 0 0;
+    padding:12px 12px 14px;
+    color:var(--slate);
+    font-family:'JetBrains Mono', monospace;
+    cursor:pointer;
+    text-align:left;
+    transform:translateY(6px);
+    transition:transform .22s cubic-bezier(.2,.7,.2,1), background .22s ease, color .22s ease, border-color .22s ease;
+    position:relative;
+  }
+  .tab .glyph{ font-size:1.05rem; display:block; margin-bottom:5px; }
+  .tab .label{ font-size:.68rem; letter-spacing:.05em; text-transform:uppercase; font-weight:600; }
+  .tab:hover{ color:var(--bone); }
+  .tab:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+
+  .tab.active{
+    background:var(--panel);
+    color:var(--tab-accent);
+    border-color:var(--tab-accent);
+    transform:translateY(0);
+    z-index:2;
+    box-shadow:0 -2px 0 var(--tab-accent) inset;
+  }
+
+  /* ---------- Card ---------- */
+  .card{
+    background:var(--panel);
+    border:1px solid var(--accent);
+    border-radius:0 8px 8px 8px;
+    position:relative;
+    z-index:1;
+    display:flex;
+    flex-direction:column;
+    min-height:0;
+    transition:border-color .3s ease;
+    overflow:hidden;
+  }
+
+  .card-head{
+    padding:20px 22px 16px;
+    border-bottom:1px solid var(--line);
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+  }
+  .card-head .glyph{
+    font-size:1.6rem;
+    line-height:1;
+  }
+  .card-head h2{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:1.15rem;
+    color:var(--accent);
+    transition:color .3s ease;
+  }
+  .card-head p{
+    font-size:.78rem;
+    color:var(--slate);
+    margin-top:4px;
+    line-height:1.5;
+  }
+
+  /* ---------- Subject textures ---------- */
+  .surface{
+    flex:1;
+    min-height:280px;
+    max-height:52vh;
+    overflow-y:auto;
+    padding:20px 22px;
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+    background-image: var(--texture);
+    background-color: var(--panel);
+  }
+  .surface::-webkit-scrollbar{ width:8px; }
+  .surface::-webkit-scrollbar-thumb{ background:var(--line); border-radius:4px; }
+
+  .surface:empty::before{
+    content: attr(data-empty);
+    margin:auto;
+    text-align:center;
+    color:var(--slate-dim);
+    font-size:.8rem;
+    font-style:italic;
+    max-width:38ch;
+    line-height:1.6;
+  }
+
+  .entry{ max-width:80%; }
+  .entry.you{ align-self:flex-end; text-align:right; }
+  .entry.desk{ align-self:flex-start; }
+  .entry .who-row{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:5px;
+  }
+  .entry.you .who-row{ flex-direction:row-reverse; }
+  .entry .who{
+    font-size:.6rem;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--slate);
+  }
+  .entry.you .who{ color:var(--accent); }
+  .entry .bubble{
+    font-family:'Fraunces', serif;
+    font-size:.95rem;
+    line-height:1.6;
+    white-space:pre-wrap;
+    padding:10px 14px;
+    border-radius:10px;
+    background:var(--panel-2);
+    border:1px solid var(--line);
+    text-align:left;
+  }
+  .entry.you .bubble{
+    background:color-mix(in srgb, var(--accent) 16%, var(--panel-2));
+    border-color:var(--accent);
+  }
+  .entry.desk .bubble.error{ border-color:#E0554A; color:#E0A69F; }
+
+  .copy-btn{
+    background:transparent;
+    border:1px solid var(--line);
+    border-radius:4px;
+    color:var(--slate);
+    width:20px;
+    height:20px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    padding:0;
+    flex-shrink:0;
+    transition:border-color .15s ease, color .15s ease;
+  }
+  .copy-btn:hover{ border-color:var(--accent); color:var(--bone); }
+  .copy-btn:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+  .copy-btn svg{ width:11px; height:11px; }
+  .copy-btn.copied{ border-color:#5ED07A; color:#5ED07A; }
+
+  .thinking{ display:inline-flex; gap:4px; align-items:center; }
+  .thinking span{
+    width:5px; height:5px; border-radius:50%;
+    background:var(--accent);
+    animation:pulse 1.2s ease-in-out infinite;
+  }
+  .thinking span:nth-child(2){ animation-delay:.15s; }
+  .thinking span:nth-child(3){ animation-delay:.3s; }
+  @keyframes pulse{ 0%,100%{ opacity:.25; } 50%{ opacity:1; } }
+
+  /* ---------- Composer ---------- */
+  form{
+    display:flex;
+    gap:8px;
+    padding:14px 16px;
+    border-top:1px solid var(--line);
+    background:var(--panel);
+  }
+  .paste-btn{
+    width:38px;
+    height:38px;
+    flex-shrink:0;
+    align-self:flex-end;
+    background:var(--panel-2);
+    border:1px solid var(--line);
+    border-radius:8px;
+    color:var(--slate);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    transition:border-color .15s ease, color .15s ease;
+  }
+  .paste-btn:hover{ border-color:var(--accent); color:var(--bone); }
+  .paste-btn:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+  .paste-btn svg{ width:16px; height:16px; }
+  .paste-btn.pasted{ border-color:#5ED07A; color:#5ED07A; }
+  textarea{
+    flex:1;
+    background:var(--panel-2);
+    border:1px solid var(--line);
+    border-radius:8px;
+    color:var(--bone);
+    font-family:'Fraunces', serif;
+    font-size:.92rem;
+    padding:10px 12px;
+    resize:none;
+    max-height:120px;
+    outline:none;
+    transition:border-color .2s ease;
+  }
+  textarea:focus{ border-color:var(--accent); }
+  textarea::placeholder{ color:var(--slate-dim); font-style:italic; }
+
+  .send{
+    background:var(--accent);
+    color:var(--ink);
+    border:none;
+    border-radius:8px;
+    padding:0 18px;
+    font-family:'JetBrains Mono', monospace;
+    font-weight:700;
+    font-size:.78rem;
+    cursor:pointer;
+    transition:background .2s ease, opacity .2s ease;
+  }
+  .send:disabled{ opacity:.4; cursor:default; }
+  .send:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+
+  footer{
+    text-align:center;
+    font-size:.62rem;
+    color:var(--slate-dim);
+    margin:14px 0 28px;
+    letter-spacing:.03em;
+  }
+
+  @media (max-width:600px){
+    .tab{ min-width:88px; padding:10px 8px 12px; }
+    .tab .label{ font-size:.6rem; }
+    .card-head{ padding:16px 16px 14px; }
+    .surface{ padding:16px; }
+    form{ padding:12px; }
+  }
 </style>
 </head>
 <body>
-  <h1>Coding Assistant</h1>
-  <div id="log"></div>
-  <form id="chat-form">
-    <input id="input" autocomplete="off" placeholder="Ask a coding question..." />
-    <button type="submit">Send</button>
-  </form>
+
+<div class="desk">
+  <div class="desk-head">
+    <div class="eyebrow">The Living Archive · Study Desk</div>
+    <h1>Four subjects. <em id="deskAccentWord">One</em> desk.</h1>
+  </div>
+
+  <nav class="tabs" id="tabs" role="tablist"></nav>
+
+  <div class="card" id="card">
+    <div class="card-head">
+      <span class="glyph" id="cardGlyph"></span>
+      <div>
+        <h2 id="cardTitle"></h2>
+        <p id="cardBlurb"></p>
+      </div>
+    </div>
+    <div class="surface" id="surface" role="log" aria-live="polite"></div>
+    <form id="form">
+      <button type="button" class="paste-btn" id="pasteBtn" title="Paste from clipboard" aria-label="Paste from clipboard">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1"></rect></svg>
+      </button>
+      <textarea id="input" rows="1" aria-label="Message"></textarea>
+      <button type="submit" class="send" id="sendBtn">Ask →</button>
+    </form>
+  </div>
+
+  <footer>talking to /study &middot; four notebooks, one desk</footer>
+</div>
+
 <script>
-  const PERSONA = 'coding';
-  const sessionId = 'coding-' + Math.random().toString(36).slice(2);
+  const subjects = {
+    lit: {
+      label: 'Literature', glyph: '📖', accent: '#C9A227',
+      blurb: 'Close reading, argument, and the shape of a sentence.',
+      empty: 'Bring a passage, a theme, or a half-formed reading. Start wherever the text left you stuck.',
+      placeholder: 'Ask about a text, a device, an argument…',
+      texture: 'repeating-linear-gradient(180deg, transparent, transparent 27px, rgba(201,162,39,0.10) 28px)'
+    },
+    chem: {
+      label: 'Chemistry', glyph: '🧪', accent: '#2FBF8F',
+      blurb: 'Reactions, structures, and the logic underneath them.',
+      empty: 'Ask about a mechanism, a bond, a balance you can\u2019t get to close.',
+      placeholder: 'Ask about a mechanism, a bond, a calculation…',
+      texture: 'linear-gradient(rgba(47,191,143,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(47,191,143,0.08) 1px, transparent 1px)',
+      textureSize: '24px 24px'
+    },
+    code: {
+      label: 'Coding', glyph: '💻', accent: '#5AD1FF',
+      blurb: 'Working code, explained plainly, tradeoffs included.',
+      empty: 'Paste an error, describe a bug, or ask for the pattern you\u2019re missing.',
+      placeholder: 'Paste an error, describe a bug, ask for a pattern…',
+      texture: 'repeating-linear-gradient(180deg, rgba(90,209,255,0.05) 0px, rgba(90,209,255,0.05) 1px, transparent 1px, transparent 3px)'
+    },
+    quantum: {
+      label: 'Quantum', glyph: '⚛️', accent: '#9D7BFF',
+      blurb: 'Superposition, gates, and circuits — kept precise.',
+      empty: 'Ask about a gate, a state, a circuit that won\u2019t collapse the way you expect.',
+      placeholder: 'Ask about a gate, a state, a circuit…',
+      texture: 'radial-gradient(rgba(157,123,255,0.16) 1px, transparent 1.4px)',
+      textureSize: '18px 18px'
+    }
+  };
 
-  const log = document.getElementById('log');
-  const form = document.getElementById('chat-form');
+  const COPY_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>';
+  const CHECK_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+
+  async function copyToClipboard(text, btn){
+    try{
+      await navigator.clipboard.writeText(text);
+    }catch(e){
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+    }
+    btn.classList.add('copied');
+    btn.innerHTML = CHECK_ICON;
+    setTimeout(() => {
+      btn.classList.remove('copied');
+      btn.innerHTML = COPY_ICON;
+    }, 1200);
+  }
+
+  const order = ['lit', 'chem', 'code', 'quantum'];
+  let current = 'lit';
+  const histories = { lit: [], chem: [], code: [], quantum: [] };
+
+  const root = document.documentElement;
+  const tabsEl = document.getElementById('tabs');
+  const card = document.getElementById('card');
+  const cardGlyph = document.getElementById('cardGlyph');
+  const cardTitle = document.getElementById('cardTitle');
+  const cardBlurb = document.getElementById('cardBlurb');
+  const surface = document.getElementById('surface');
+  const form = document.getElementById('form');
   const input = document.getElementById('input');
+  const sendBtn = document.getElementById('sendBtn');
+  const deskAccentWord = document.getElementById('deskAccentWord');
 
-  function append(who, text) {
-    const div = document.createElement('div');
-    div.className = who === 'you' ? 'you' : (who === 'err' ? 'err' : 'bot');
-    div.textContent = (who === 'you' ? 'You: ' : 'Bot: ') + text;
-    log.appendChild(div);
-    log.scrollTop = log.scrollHeight;
+  function buildTabs(){
+    order.forEach(key => {
+      const s = subjects[key];
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'tab' + (key === current ? ' active' : '');
+      btn.style.setProperty('--tab-accent', s.accent);
+      btn.setAttribute('role', 'tab');
+      btn.setAttribute('aria-selected', key === current ? 'true' : 'false');
+      btn.innerHTML = '<span class="glyph">' + s.glyph + '</span><span class="label">' + s.label + '</span>';
+      btn.addEventListener('click', () => switchSubject(key));
+      tabsEl.appendChild(btn);
+    });
+  }
+
+  function renderSurface(){
+    surface.innerHTML = '';
+    const hist = histories[current];
+    if (!hist.length){
+      surface.setAttribute('data-empty', subjects[current].empty);
+      return;
+    }
+    surface.removeAttribute('data-empty');
+    hist.forEach(item => surface.appendChild(item.cloneNode(true)));
+    surface.scrollTop = surface.scrollHeight;
+  }
+
+  function switchSubject(key){
+    if (key === current) return;
+    current = key;
+    const s = subjects[key];
+
+    root.style.setProperty('--accent', s.accent);
+    card.style.borderColor = s.accent;
+    cardGlyph.textContent = s.glyph;
+    cardTitle.textContent = s.label;
+    cardBlurb.textContent = s.blurb;
+    input.placeholder = s.placeholder;
+    deskAccentWord.textContent = s.label;
+    surface.style.backgroundImage = s.texture;
+    surface.style.backgroundSize = s.textureSize || 'auto';
+
+    [...tabsEl.children].forEach((btn, i) => {
+      const isActive = order[i] === key;
+      btn.classList.toggle('active', isActive);
+      btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+    });
+
+    renderSurface();
+    input.focus();
+  }
+
+  function makeEntry(who, text, isError){
+    const wrap = document.createElement('div');
+    wrap.className = 'entry ' + who;
+
+    const whoRow = document.createElement('div');
+    whoRow.className = 'who-row';
+
+    const label = document.createElement('div');
+    label.className = 'who';
+    label.textContent = who === 'you' ? 'You' : subjects[current].label;
+
+    const copyBtn = document.createElement('button');
+    copyBtn.type = 'button';
+    copyBtn.className = 'copy-btn';
+    copyBtn.setAttribute('aria-label', 'Copy message');
+    copyBtn.innerHTML = COPY_ICON;
+    copyBtn.addEventListener('click', () => copyToClipboard(text, copyBtn));
+
+    whoRow.appendChild(label);
+    whoRow.appendChild(copyBtn);
+
+    const bubble = document.createElement('div');
+    bubble.className = 'bubble' + (isError ? ' error' : '');
+    bubble.textContent = text;
+
+    wrap.appendChild(whoRow);
+    wrap.appendChild(bubble);
+    return wrap;
   }
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const text = input.value.trim();
     if (!text) return;
-    append('you', text);
+
+    const subjectAtSend = current;
+    const userNode = makeEntry('you', text);
+    histories[subjectAtSend].push(userNode);
+    if (current === subjectAtSend) surface.appendChild(userNode);
+
     input.value = '';
-    try {
+    input.style.height = 'auto';
+    sendBtn.disabled = true;
+    surface.removeAttribute('data-empty');
+    surface.scrollTop = surface.scrollHeight;
+
+    const thinking = document.createElement('div');
+    thinking.className = 'entry desk';
+    thinking.innerHTML = '<div class="who">' + subjects[subjectAtSend].label + '</div><div class="bubble"><span class="thinking"><span></span><span></span><span></span></span></div>';
+    if (current === subjectAtSend){ surface.appendChild(thinking); surface.scrollTop = surface.scrollHeight; }
+
+    try{
       const res = await fetch('/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: text, sessionId, persona: PERSONA }),
+        body: JSON.stringify({ message: text, persona: 'coding' })
       });
       const data = await res.json();
-      if (data.error) {
-        append('err', data.error);
-      } else {
-        append('bot', data.reply || 'No response.');
-      }
-    } catch (err) {
-      append('err', 'Connection error: ' + err.message);
+      thinking.remove();
+
+      const replyText = data.reply || data.error || 'No response.';
+      const replyNode = makeEntry('desk', replyText, !!data.error);
+      histories[subjectAtSend].push(replyNode);
+      if (current === subjectAtSend){ surface.appendChild(replyNode); surface.scrollTop = surface.scrollHeight; }
+    }catch(err){
+      thinking.remove();
+      const replyNode = makeEntry('desk', 'Could not reach the desk: ' + err.message, true);
+      histories[subjectAtSend].push(replyNode);
+      if (current === subjectAtSend){ surface.appendChild(replyNode); surface.scrollTop = surface.scrollHeight; }
+    }finally{
+      sendBtn.disabled = false;
+      input.focus();
     }
   });
+
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey){
+      e.preventDefault();
+      if (!sendBtn.disabled) form.requestSubmit();
+    }
+  });
+  input.addEventListener('input', () => {
+    input.style.height = 'auto';
+    input.style.height = Math.min(input.scrollHeight, 120) + 'px';
+    sendBtn.disabled = input.value.trim() === '';
+  });
+
+  const pasteBtn = document.getElementById('pasteBtn');
+  const pasteBtnOriginalHTML = pasteBtn.innerHTML;
+  pasteBtn.addEventListener('click', async () => {
+    try{
+      const text = await navigator.clipboard.readText();
+      if (text){
+        const start = input.selectionStart ?? input.value.length;
+        const end = input.selectionEnd ?? input.value.length;
+        input.value = input.value.slice(0, start) + text + input.value.slice(end);
+        input.dispatchEvent(new Event('input'));
+        input.focus();
+        const pos = start + text.length;
+        input.setSelectionRange(pos, pos);
+      }
+      pasteBtn.classList.add('pasted');
+      pasteBtn.innerHTML = CHECK_ICON;
+      setTimeout(() => {
+        pasteBtn.classList.remove('pasted');
+        pasteBtn.innerHTML = pasteBtnOriginalHTML;
+      }, 900);
+    }catch(e){
+      // Clipboard read can be blocked by permissions; fall back to focusing
+      // the textarea so the person can paste manually (Ctrl/Cmd+V or long-press).
+      input.focus();
+    }
+  });
+
+  buildTabs();
+  switchSubject('lit');
+  // force initial accent since switchSubject short-circuits on same key
+  (function initAccent(){
+    const s = subjects.lit;
+    root.style.setProperty('--accent', s.accent);
+    card.style.borderColor = s.accent;
+    cardGlyph.textContent = s.glyph;
+    cardTitle.textContent = s.label;
+    cardBlurb.textContent = s.blurb;
+    input.placeholder = s.placeholder;
+    surface.style.backgroundImage = s.texture;
+    surface.setAttribute('data-empty', s.empty);
+  })();
+  sendBtn.disabled = true;
 </script>
+
 </body>
 </html>
